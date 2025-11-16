@@ -1,0 +1,57 @@
+.card {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  text-decoration: none;
+  color: #EFEFEF;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.visualContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 50%);
+}
+
+.content {
+  padding: 25px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.excerpt {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  color: #C0C0C0;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cta {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
