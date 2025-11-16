@@ -1,0 +1,82 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 1000;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: #0A0A0A;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #EFEFEF;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks a {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #EFEFEF;
+  position: relative;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #EFEFEF;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.ctaButton {
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0A0A0A;
+  background-color: #EFEFEF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ctaButton:hover {
+  background-color: #FAFAFA;
+  transform: scale(1.05);
+}
