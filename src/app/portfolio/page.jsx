@@ -3,14 +3,14 @@ import ProjectCard from '@/components/ui/ProjectCard';
 
 const projects = [
   {
+    title: 'פסטיבל Marry Land',
+    slug: '/portfolio/marry-land',
+    videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1763320961/Marry-Land_dkt5yr.mp4',
+  },
+  {
     title: 'קונספט: ג\'ונגל אורבני',
     slug: '/portfolio/jungle-wedding',
     videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1763211981/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wm08bo.mp4',
-  },
-  {
-    title: 'פסטיבל: Marry Land',
-    slug: '/portfolio/marry-land-festival',
-    videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4',
   },
   {
     title: 'קונספט: All Black Metal',
