@@ -1,0 +1,94 @@
+.footer {
+  width: 100%;
+  padding: 80px 40px 30px 40px;
+  background-color: #000;
+  border-top: 1px solid #222;
+  margin-top: 80px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #EFEFEF;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.columnTitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #EFEFEF;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.linksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linksList a {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.linksList a:hover {
+  color: #EFEFEF;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0A0A0A;
+  background-color: #EFEFEF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.ctaButton:hover {
+  background-color: #FAFAFA;
+}
+
+.bottomBar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
