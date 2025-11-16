@@ -1,0 +1,144 @@
+.pageContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 40px 80px 40px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.header p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #C0C0C0;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.step.reverse .stepText {
+  order: 2;
+}
+
+.step.reverse .stepVisual {
+  order: 1;
+}
+
+.stepNumber {
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #AAAAAA;
+  margin-bottom: 10px;
+}
+
+.stepTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.stepDescription {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #C0C0C0;
+}
+
+.stepVisual {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stepVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 80px 20px;
+  margin-top: 80px;
+  border-top: 1px solid #333;
+}
+
+.ctaSection h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.ctaSection p {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  color: #C0C0C0;
+  margin-bottom: 30px;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0A0A0A;
+  background-color: #EFEFEF;
+  border: none;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ctaButton:hover {
+  background-color: #FAFAFA;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 100px 20px 40px 20px;
+  }
+  .header h1 {
+    font-size: 2.5rem;
+  }
+  .step {
+    grid-template-columns: 1fr;
+  }
+  .step.reverse .stepText,
+  .step.reverse .stepVisual {
+    order: initial;
+  }
+  .stepTitle {
+    font-size: 2rem;
+  }
+}
