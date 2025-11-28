@@ -152,4 +152,16 @@ button, .button {
   border: none;
   border-top: 1px solid var(--color-divider);
   margin: 40px 0;
+
+  /* High Contrast Mode */
+body.high-contrast {
+  --color-primary: #FFFFFF;
+  --color-background: #000000;
+  --color-text-dark: #FFFFFF;
+  --color-text-muted: #CCCCCC;
+}
+
+body.high-contrast * {
+  border-color: #FFFFFF !important;
+}
 }
