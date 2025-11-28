@@ -26,17 +26,19 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
+        {/* לוגו - שמאל */}
         <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
           Skyline Productions
         </Link>
 
-        {/* תפריט רגיל - Desktop */}
+        {/* תפריט רגיל - מרכז - Desktop */}
         <ul className={styles.navLinks}>
           <li><Link href="/method">השיטה</Link></li>
           <li><Link href="/portfolio">הביצוע</Link></li>
           <li><Link href="/production-room">חדר ההפקה</Link></li>
         </ul>
 
+        {/* כפתור יצירת קשר - ימין */}
         <a href="mailto:info@skylineproductions.com" className={styles.ctaButton}>
           יצירת קשר
         </a>
