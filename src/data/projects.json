@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": "marry-land",
+      "title": "פסטיבל Marry Land",
+      "slug": "marry-land",
+      "category": "festival",
+      "shortDescription": "פסטיבל חתונות ראשון מסוגו בישראל",
+      "fullDescription": "פסטיבל Marry Land היה אירוע פורץ דרך שהפך את תעשיית החתונות בישראל. עם למעלה מ-50 ספקים מובילים, מופעים חיים, והפקה מרהיבה - זה היה יום שלא יישכח.",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763320961/Marry-Land_dkt5yr.mp4",
+      "gallery": [
+        "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763320961/Marry-Land_dkt5yr.mp4"
+      ],
+      "details": {
+        "date": "מאי 2024",
+        "guests": "500+",
+        "location": "תל אביב",
+        "type": "פסטיבל חתונות"
+      },
+      "testimonial": {
+        "text": "דנה יצרה משהו שלא ראינו מעולם בישראל. הפסטיבל היה מושלם מכל בחינה!",
+        "author": "מארגני הפסטיבל"
+      },
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "jungle-wedding",
+      "title": "קונספט: ג'ונגל אורבני",
+      "slug": "jungle-wedding",
+      "category": "wedding",
+      "shortDescription": "חתונה בקונספט ג'ונגל אורבני ייחודי",
+      "fullDescription": "חתונה שמשלבת את הטבע העירוני עם אלמנטים טרופיים פראיים. כל פרט תוכנן בקפידה ליצירת אווירה אקזוטית ומיוחדת.",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763211981/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wm08bo.mp4",
+      "gallery": [
+        "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763211981/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wm08bo.mp4"
+      ],
+      "details": {
+        "date": "יוני 2024",
+        "guests": "180",
+        "location": "הרצליה",
+        "type": "חתונה פרטית"
+      },
+      "testimonial": {
+        "text": "דנה הפכה את החלום שלנו למציאות. כל אורח היה המום!",
+        "author": "יעל ודניאל"
+      },
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "metal-wedding",
+      "title": "קונספט: All Black Metal",
+      "slug": "metal-wedding",
+      "category": "wedding",
+      "shortDescription": "חתונה דרמטית בשחור מוחלט",
+      "fullDescription": "חתונה אלטרנטיבית ומרהיבה בשחור מוחלט. קונספט נועז שמשלב אלגנטיות עם אסתטיקה אדג'י וייחודית.",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4",
+      "gallery": [
+        "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4"
+      ],
+      "details": {
+        "date": "אוקטובר 2024",
+        "guests": "150",
+        "location": "תל אביב",
+        "type": "חתונה פרטית"
+      },
+      "testimonial": {
+        "text": "חתונה שאף אחד לא שכח. דנה העזה להוציא לפועל את הקונספט הכי מטורף שחלמנו עליו!",
+        "author": "רועי ושירה"
+      },
+      "featured": true,
+      "published": true
+    }
+  ]
+}

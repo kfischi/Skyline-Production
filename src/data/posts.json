@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": "5-signs",
+      "title": "5 סימנים שהאולם עושה עליכם סיבוב (ולא ידעתם)",
+      "slug": "5-signs",
+      "category": "tips",
+      "excerpt": "לפני שאתם סוגרים חוזה, דנה חושפת את 5 הדגלים האדומים שכל זוג חייב לדעת...",
+      "thumbnailUrl": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425656/5_%D7%A1%D7%99%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%94%D7%90%D7%95%D7%9C%D7%9D_kbqjzv.jpg",
+      "content": "תוכן מלא יבוא כאן...",
+      "videoUrl": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_%D7%A1%D7%99%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%94%D7%90%D7%95%D7%9C%D7%9D_kbqjzv.mp4",
+      "author": "דנה",
+      "publishedDate": "2024-11-01",
+      "published": true
+    },
+    {
+      "id": "chuppah-story",
+      "title": "סיפור מהשטח: פדיחת הבד של החופה",
+      "slug": "chuppah-story",
+      "category": "stories",
+      "excerpt": "מה קורה כשהבד שהכלה הזמינה מגיע בצבע הלא נכון? סיפור אמיתי על פתרון בעיות בזמן אמת.",
+      "thumbnailUrl": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425660/VID-20250916-WA0007_q8j5hk.jpg",
+      "content": "תוכן מלא יבוא כאן...",
+      "videoUrl": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4",
+      "author": "דנה",
+      "publishedDate": "2024-10-15",
+      "published": true
+    }
+  ]
+}

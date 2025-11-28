@@ -1,23 +1,6 @@
 import styles from './Portfolio.module.css';
 import ProjectCard from '@/components/ui/ProjectCard';
-
-const projects = [
-  {
-    title: 'פסטיבל Marry Land',
-    slug: '/portfolio/marry-land',
-    videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1763320961/Marry-Land_dkt5yr.mp4',
-  },
-  {
-    title: 'קונספט: ג\'ונגל אורבני',
-    slug: '/portfolio/jungle-wedding',
-    videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1763211981/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wm08bo.mp4',
-  },
-  {
-    title: 'קונספט: All Black Metal',
-    slug: '/portfolio/metal-wedding',
-    videoLoopUrl: 'https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4',
-  },
-];
+import { getAllProjects } from '@/lib/data';
 
 export const metadata = {
   title: 'הביצוע | Skyline Productions',
@@ -25,6 +8,8 @@ export const metadata = {
 };
 
 export default function PortfolioPage() {
+  const projects = getAllProjects();
+
   return (
     <div className={styles.pageContainer}>
       <header className={styles.header}>
@@ -39,10 +24,10 @@ export default function PortfolioPage() {
       <div className={styles.projectsGrid}>
         {projects.map((project) => (
           <ProjectCard
-            key={project.slug}
+            key={project.id}
             title={project.title}
-            slug={project.slug}
-            videoLoopUrl={project.videoLoopUrl}
+            slug={`/portfolio/${project.slug}`}
+            videoLoopUrl={project.heroVideo}
           />
         ))}
       </div>

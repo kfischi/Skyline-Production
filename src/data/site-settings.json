@@ -1,0 +1,40 @@
+{
+  "site": {
+    "name": "Skyline Productions",
+    "tagline": "הפקת אירועי קונספט בניהול מלא",
+    "description": "אנחנו לא רק מפיקים אירועים. אנחנו הופכים חזון למציאות.",
+    "contact": {
+      "email": "info@skylineproductions.com",
+      "phone": "+972546203038",
+      "whatsapp": "+972546203038",
+      "whatsappMessage": "שלום דנה! 👋\nראיתי את האתר של Skyline Productions ואני מעוניין/ת לשמוע עוד על הפקת אירועים.\nמתי נוכל לדבר?"
+    },
+    "social": {
+      "youtube": "",
+      "facebook": "",
+      "instagram": "",
+      "tiktok": ""
+    },
+    "features": {
+      "accessibility": true,
+      "floatingButtons": true,
+      "chatbot": true
+    }
+  },
+  "theme": {
+    "colors": {
+      "primary": "#F8F6F0",
+      "secondary": "#E8E4DA",
+      "accent": "#C4A572",
+      "textDark": "#2C2826",
+      "textMuted": "#7A7672",
+      "divider": "#D4CFC5",
+      "white": "#FFFFFF",
+      "background": "#F8F6F0"
+    },
+    "fonts": {
+      "heading": "Playfair Display",
+      "body": "Assistant"
+    }
+  }
+}
