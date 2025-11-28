@@ -4,20 +4,20 @@ import styles from './HeroSection.module.css';
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className={styles.heroVideo}
-      >
-        <source
-          src="https://res.cloudinary.com/dptyfvwyo/video/upload/v1763892387/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wc9vnu.mp4"
-          type="video/mp4"
+      {/* סרטון Canva */}
+      <div className={styles.canvaContainer}>
+        <iframe 
+          loading="eager"
+          className={styles.canvaIframe}
+          src="https://www.canva.com/design/DAG57gR7WJg/1lp_4Fm3uZ7ris1U1kYkHA/watch?embed" 
+          allowFullScreen
+          allow="fullscreen"
+          title="Skyline Productions Intro"
         />
-        הדפדפן שלך לא תומך בתג video
-      </video>
+      </div>
+      
       <div className={styles.heroOverlay}></div>
+      
       <div className={styles.heroContent}>
         <h1 className={styles.heroTitle}>
           הפקת אירועי קונספט
