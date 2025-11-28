@@ -4,17 +4,20 @@ import styles from './HeroSection.module.css';
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
-      {/* סרטון Canva */}
-      <div className={styles.canvaContainer}>
-        <iframe 
-          loading="eager"
-          className={styles.canvaIframe}
-          src="https://www.canva.com/design/DAG57gR7WJg/1lp_4Fm3uZ7ris1U1kYkHA/watch?embed" 
-          allowFullScreen
-          allow="fullscreen"
-          title="Skyline Productions Intro"
+      {/* סרטון Hero */}
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className={styles.heroVideo}
+      >
+        <source
+          src="https://res.cloudinary.com/dptyfvwyo/video/upload/v1764339519/SKYLINE_PRODUCTION_2.2_cdfnv4.mp4"
+          type="video/mp4"
         />
-      </div>
+        הדפדפן שלך לא תומך בתג video
+      </video>
       
       <div className={styles.heroOverlay}></div>
       
