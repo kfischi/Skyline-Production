@@ -1,0 +1,58 @@
+.section {
+  width: 100%;
+  padding: 80px 40px;
+  background: var(--color-primary);
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  margin-bottom: 40px;
+}
+
+.ctaButton {
+  display: inline-block;
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
+  border: none;
+  padding: 18px 45px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(196, 165, 114, 0.4);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(196, 165, 114, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .description {
+    font-size: 1.2rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 14px 35px;
+  }
+}
