@@ -167,17 +167,7 @@
   color: var(--color-text-dark);
 }
 
-/* High Contrast Mode */
-:global(body.high-contrast) {
-  --color-primary: #FFFFFF;
-  --color-background: #000000;
-  --color-text-dark: #FFFFFF;
-  --color-text-muted: #CCCCCC;
-}
-
-:global(body.high-contrast) * {
-  border-color: #FFFFFF !important;
-}
+/* High Contrast Mode - removed from here, add to globals.css instead */
 
 /* Responsive */
 @media (max-width: 768px) {
