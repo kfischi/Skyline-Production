@@ -6,13 +6,11 @@
   text-decoration: none;
   color: var(--color-text-dark);
   box-shadow: 0 5px 20px rgba(44, 40, 38, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 35px rgba(196, 165, 114, 0.25);
+  transform: translateY(-5px);
 }
 
 .visualContainer {
@@ -23,24 +21,13 @@
   background-color: #000;
 }
 
-.videoLoop {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.card:hover .videoLoop {
-  transform: scale(1.05);
-}
-
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(44, 40, 38, 0.6) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(44, 40, 38, 0.4) 0%, transparent 50%);
 }
 
 .content {
@@ -49,21 +36,23 @@
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.3;
-  transition: color 0.3s ease;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-.card:hover .title {
+.excerpt {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.cta {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--color-accent);
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 1.5rem;
-  }
-  .content {
-    padding: 20px;
-  }
 }
