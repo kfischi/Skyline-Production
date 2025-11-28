@@ -1,40 +1,128 @@
-15:04:52.912 Running build in Washington, D.C., USA (East) – iad1
-15:04:52.913 Build machine configuration: 2 cores, 8 GB
-15:04:53.028 Cloning github.com/kfischi/Skyline-Production (Branch: main, Commit: 57be2f8)
-15:04:53.029 Previous build caches not available.
-15:04:53.226 Cloning completed: 198.000ms
-15:04:53.673 Running "vercel build"
-15:04:54.070 Vercel CLI 48.12.0
-15:04:54.394 Installing dependencies...
-15:05:03.779 
-15:05:03.779 added 21 packages in 9s
-15:05:03.779 
-15:05:03.780 3 packages are looking for funding
-15:05:03.780   run `npm fund` for details
-15:05:03.827 Detected Next.js version: 14.2.5
-15:05:03.830 Running "npm run build"
-15:05:03.990 
-15:05:03.991 > skyline-productions@1.0.0 build
-15:05:03.991 > next build
-15:05:03.991 
-15:05:04.562 Attention: Next.js now collects completely anonymous telemetry regarding usage.
-15:05:04.562 This information is used to shape Next.js' roadmap and prioritize features.
-15:05:04.562 You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
-15:05:04.562 https://nextjs.org/telemetry
-15:05:04.563 
-15:05:04.639   ▲ Next.js 14.2.5
-15:05:04.640 
-15:05:04.658    Creating an optimized production build ...
-15:05:08.460 Failed to compile.
-15:05:08.460 
-15:05:08.461 ./src/components/sections/FeaturedProjects.jsx
-15:05:08.461 Module not found: Can't resolve '@/lib/data'
-15:05:08.461 
-15:05:08.461 https://nextjs.org/docs/messages/module-not-found
-15:05:08.462 
-15:05:08.462 Import trace for requested module:
-15:05:08.462 ./src/app/page.jsx
-15:05:08.463 
-15:05:08.478 
-15:05:08.479 > Build failed because of webpack errors
-15:05:08.504 Error: Command "npm run build" exited with 1
+// src/lib/data.js
+
+// ייבוא ישיר של JSON
+const projectsData = {
+  "projects": [
+    {
+      "id": "marry-land",
+      "title": "פסטיבל Marry Land",
+      "slug": "marry-land",
+      "category": "festival",
+      "shortDescription": "פסטיבל חתונות ראשון מסוגו בישראל",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763320961/Marry-Land_dkt5yr.mp4",
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "jungle-wedding",
+      "title": "קונספט: ג'ונגל אורבני",
+      "slug": "jungle-wedding",
+      "category": "wedding",
+      "shortDescription": "חתונה בקונספט ג'ונגל אורבני ייחודי",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763211981/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wm08bo.mp4",
+      "published": true,
+      "featured": true
+    },
+    {
+      "id": "metal-wedding",
+      "title": "קונספט: All Black Metal",
+      "slug": "metal-wedding",
+      "category": "wedding",
+      "shortDescription": "חתונה דרמטית בשחור מוחלט",
+      "heroVideo": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4",
+      "published": true,
+      "featured": true
+    }
+  ]
+};
+
+const postsData = {
+  "posts": [
+    {
+      "id": "5-signs",
+      "title": "5 סימנים שהאולם עושה עליכם סיבוב",
+      "slug": "5-signs",
+      "excerpt": "לפני שאתם סוגרים חוזה...",
+      "thumbnailUrl": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425656/5_%D7%A1%D7%99%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%94%D7%90%D7%95%D7%9C%D7%9D_kbqjzv.jpg",
+      "published": true
+    }
+  ]
+};
+
+const testimonialsData = {
+  "testimonials": []
+};
+
+const aboutData = {
+  "about": {}
+};
+
+const siteSettings = {
+  "site": {
+    "contact": {
+      "email": "info@skylineproductions.com",
+      "phone": "+972546203038",
+      "whatsapp": "+972546203038",
+      "whatsappMessage": "שלום דנה! 👋\nראיתי את האתר של Skyline Productions ואני מעוניין/ת לשמוע עוד על הפקת אירועים.\nמתי נוכל לדבר?"
+    },
+    "social": {
+      "youtube": "",
+      "facebook": "",
+      "instagram": "",
+      "tiktok": ""
+    }
+  }
+};
+
+// פונקציות
+export function getAllProjects() {
+  return projectsData.projects.filter(p => p.published);
+}
+
+export function getProjectBySlug(slug) {
+  return projectsData.projects.find(p => p.slug === slug && p.published);
+}
+
+export function getFeaturedProjects() {
+  return projectsData.projects.filter(p => p.published && p.featured);
+}
+
+export function getAllPosts() {
+  return postsData.posts.filter(p => p.published);
+}
+
+export function getPostBySlug(slug) {
+  return postsData.posts.find(p => p.slug === slug && p.published);
+}
+
+export function getPostsByCategory(category) {
+  return postsData.posts.filter(p => p.published && p.category === category);
+}
+
+export function getAllTestimonials() {
+  return testimonialsData.testimonials.filter(t => t.published);
+}
+
+export function getFeaturedTestimonials() {
+  return testimonialsData.testimonials.filter(t => t.published && t.featured);
+}
+
+export function getAboutData() {
+  return aboutData.about;
+}
+
+export function getSiteSettings() {
+  return siteSettings.site;
+}
+
+export function getThemeSettings() {
+  return {};
+}
+
+export function getContactInfo() {
+  return siteSettings.site.contact;
+}
+
+export function getSocialLinks() {
+  return siteSettings.site.social;
+}
