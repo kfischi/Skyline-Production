@@ -6,6 +6,7 @@ import { chatFlow, translations } from '@/lib/chatFlow';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false); // הכפתור מוסתר בהתחלה
   const [messages, setMessages] = useState([
     { 
       id: 1, 
@@ -29,11 +30,11 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages, isOpen]);
 
-  // פתיחה אוטומטית אחרי 5 שניות
+  // הכפתור מופיע אחרי 10 שניות
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 5000); // 5 שניות
+      setIsVisible(true); // מציג את הכפתור
+    }, 10000); // 10 שניות
 
     return () => clearTimeout(timer);
   }, []); // רק פעם אחת כשהקומפוננטה נטענת
@@ -186,12 +187,16 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* כפתור צף עם תמונת דנה */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={styles.chatButton}
-        aria-label="פתח צ'אט עם דנה"
-      >
+      {/* כפתור צף עם תמונת דנה - מופיע אחרי 10 שניות */}
+      {isVisible && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={styles.chatButton}
+          aria-label="פתח צ'אט עם דנה"
+          style={{
+            animation: 'slideInUp 0.5s ease-out'
+          }}
+        >
         <div className={styles.chatButtonCircle}>
           {isOpen ? (
             <div style={{ 
@@ -224,6 +229,7 @@ export default function ChatBot() {
           </>
         )}
       </button>
+      )}
 
       {/* חלון הצ'אט */}
       {isOpen && (
