@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import FloatingActions from '@/components/ui/FloatingActions';
 import AccessibilityWidget from '@/components/ui/AccessibilityWidget';
+import ChatBot from '@/components/layout/ChatBot';
 import { getContactInfo } from '@/lib/data';
 
 export const metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <FloatingActions contactInfo={contactInfo} />
         <AccessibilityWidget />
+        <ChatBot />
       </body>
     </html>
   );
