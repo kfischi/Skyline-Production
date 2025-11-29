@@ -84,14 +84,16 @@ export const chatFlow = {
 
   concern: {
     id: 'concern',
-    message: 'מה הכי מדאיג אתכם?',
+    message: 'מה הכי מדאיג אתכם?\n(אפשר לבחור כמה תשובות)',
+    type: 'multiSelect',
     buttons: [
-      { text: 'אין זמן לנהל הכל ⏰', value: 'time', next: 'venue' },
-      { text: 'פחד שמשהו ישתבש 😰', value: 'fear', next: 'venue' },
-      { text: 'לא יודעים מאיפה להתחיל 🤷', value: 'start', next: 'venue' },
-      { text: 'רוצים משהו שונה 🌟', value: 'different', next: 'venue' },
-      { text: 'קשה למצוא ספקים טובים 🔍', value: 'vendors', next: 'venue' }
-    ]
+      { text: 'אין זמן לנהל הכל ⏰', value: 'time' },
+      { text: 'פחד שמשהו ישתבש 😰', value: 'fear' },
+      { text: 'לא יודעים מאיפה להתחיל 🤷', value: 'start' },
+      { text: 'רוצים משהו שונה 🌟', value: 'different' },
+      { text: 'קשה למצוא ספקים טובים 🔍', value: 'vendors' }
+    ],
+    next: 'venue'
   },
 
   venue: {
@@ -142,7 +144,7 @@ export const chatFlow = {
 
   final: {
     id: 'final',
-    message: 'תודה רבה! קיבלנו את הפרטים 📨\n\nדנה תחזור אליכם בהקדם.\n\nבינתיים אפשר:\n• לראות פרויקטים שעשינו 🎬\n• ללחוץ על כפתור הווטסאפ למטה 💬\n• לקרוא על השיטה שלנו 📖\n\nנשמח לארגן לכם אירוע מושלם!',
+    message: 'תודה רבה! קיבלנו את הפרטים 📨\n\nתודה ששיתפתם אותי. אני לוקחת ברצינות את העבודה שלי וחשוב לי לקבל פניות אמיתיות.\n\nדנה תחזור אליכם בהקדם.\n\nבינתיים אפשר:\n• לראות פרויקטים שעשינו 🎬\n• ללחוץ על כפתור הווטסאפ למטה 💬\n• לקרוא על השיטה שלנו 📖\n\nנשמח לארגן לכם אירוע מושלם!',
     type: 'final'
   }
 };
