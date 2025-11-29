@@ -53,12 +53,16 @@ export default function ChatBot() {
       return;
     }
 
-    // בחירה רגילה
+    // בחירה רגילה - שימוש ב-id של השלב (לא שם השלב)
     const stepData = {};
-    stepData[currentStep] = button.value;
+    const fieldName = currentStepData.id; // 'start' → 'type', 'hasDate' → 'hasDate'
+    stepData[fieldName] = button.value;
     
     const newUserData = { ...userData, ...stepData };
     setUserData(newUserData);
+
+    console.log('💾 Saving data:', { [fieldName]: button.value });
+    console.log('📊 All user data:', newUserData);
 
     const userMsg = {
       id: Date.now(),
@@ -85,10 +89,13 @@ export default function ChatBot() {
     if (selectedConcerns.length === 0) return;
 
     const stepData = {};
-    stepData[currentStep] = selectedConcerns;
+    const fieldName = chatFlow[currentStep].id; // שימוש ב-id
+    stepData[fieldName] = selectedConcerns;
     
     const newUserData = { ...userData, ...stepData };
     setUserData(newUserData);
+
+    console.log('💾 Multi-select data:', { [fieldName]: selectedConcerns });
 
     const concernsText = selectedConcerns.map(c => {
       const btn = chatFlow.concern.buttons.find(b => b.value === c);
