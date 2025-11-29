@@ -43,22 +43,76 @@ ${leadData.extra ? `📝 *הערות:*\n${leadData.extra}\n` : ''}
   }
 }
 
-// שמירת נתונים (מוכן ל-CRM עתידי)
+// שמירת נתונים ל-CRM (מוכן להרחבה)
 async function saveLeadData(leadData) {
-  // לוג לקונסול
-  console.log('📊 Lead saved:', {
+  const enrichedData = {
     timestamp: new Date().toISOString(),
-    ...leadData
-  });
+    source: 'website_chatbot',
+    ...leadData,
+    // מטא-דאטה נוסף
+    metadata: {
+      userAgent: 'web',
+      createdAt: new Date().toISOString(),
+      status: 'new',
+      assignedTo: 'Dana'
+    }
+  };
+
+  // 1. לוג לקונסול (לפיתוח)
+  console.log('📊 Lead saved:', enrichedData);
   
-  // TODO: כאן תוכל להוסיף בעתיד:
-  // - שמירה ל-Google Sheets
-  // - שמירה ל-Airtable
-  // - שמירה ל-MongoDB
-  // - שליחה ל-CRM חיצוני (Salesforce, HubSpot, וכו')
+  // 2. TODO: אינטגרציות CRM (הוסף לפי הצורך)
   
-  return true;
+  // אפשרות A: Google Sheets
+  // await saveToGoogleSheets(enrichedData);
+  
+  // אפשרות B: Airtable
+  // await saveToAirtable(enrichedData);
+  
+  // אפשרות C: MongoDB
+  // await saveToMongoDB(enrichedData);
+  
+  // אפשרות D: Salesforce / HubSpot
+  // await saveToCRM(enrichedData);
+  
+  // אפשרות E: Webhook לשירות חיצוני
+  // await fetch('https://your-crm.com/api/leads', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify(enrichedData)
+  // });
+  
+  return { success: true, data: enrichedData };
 }
+
+// פונקציות עזר ל-CRM (דוגמאות להרחבה עתידית)
+
+// async function saveToGoogleSheets(data) {
+//   const { GoogleSpreadsheet } = require('google-spreadsheet');
+//   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID);
+//   await doc.useServiceAccountAuth({
+//     client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+//     private_key: process.env.GOOGLE_PRIVATE_KEY,
+//   });
+//   await doc.loadInfo();
+//   const sheet = doc.sheetsByIndex[0];
+//   await sheet.addRow(data);
+// }
+
+// async function saveToAirtable(data) {
+//   const Airtable = require('airtable');
+//   const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
+//   await base('Leads').create([{ fields: data }]);
+// }
+
+// async function saveToMongoDB(data) {
+//   const { MongoClient } = require('mongodb');
+//   const client = new MongoClient(process.env.MONGODB_URI);
+//   await client.connect();
+//   const db = client.db('skyline');
+//   await db.collection('leads').insertOne(data);
+//   await client.close();
+// }
 
 export async function POST(req) {
   try {
@@ -75,7 +129,10 @@ export async function POST(req) {
         style: translations.style[leadData.style] || leadData.style,
         budget: translations.budget[leadData.budget] || leadData.budget,
         priority: translations.priority[leadData.priority] || leadData.priority,
-        concern: translations.concern[leadData.concern] || leadData.concern,
+        // תמיכה בדאגות מרובות
+        concern: Array.isArray(leadData.concern) 
+          ? leadData.concern.map(c => translations.concern[c] || c).join(', ')
+          : (translations.concern[leadData.concern] || leadData.concern),
         venue: leadData.venue ? translations.venue[leadData.venue] : '',
         extra: leadData.extra || '',
         contactMethod: translations.contactMethod[leadData.contactMethod] || leadData.contactMethod,
