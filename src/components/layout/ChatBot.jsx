@@ -201,7 +201,7 @@ export default function ChatBot() {
             </div>
           ) : (
             <img 
-              src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
+              src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
               alt="דנה"
             />
           )}
@@ -223,7 +223,7 @@ export default function ChatBot() {
           <div className={styles.chatHeader}>
             <div className={styles.headerIcon}>
               <img 
-                src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
+                src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
                 alt="דנה"
               />
             </div>
@@ -245,7 +245,7 @@ export default function ChatBot() {
                       '👤'
                     ) : (
                       <img 
-                        src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A9%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
+                        src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
                         alt="דנה"
                       />
                     )}
