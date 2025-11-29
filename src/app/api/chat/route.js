@@ -1,34 +1,57 @@
 import { NextResponse } from 'next/server';
 import { translations } from '@/lib/chatFlow';
 
-// שליחת הודעת ווטסאפ לדנה
+// שליחת הודעת ווטסאפ לדנה - כרטיס לקוח מעוצב
 async function sendWhatsAppToDana(leadData) {
   try {
     const phoneNumber = '972546203038'; // מספר דנה בפורמט בינלאומי
     
+    // פונקציית עזר להסתרת שורות ריקות
+    const showIfExists = (emoji, label, value) => {
+      return value ? `${emoji} ${label}: ${value}\n` : '';
+    };
+
+    // פורמט דאגות (יכול להיות מערך)
+    const formatConcerns = (concerns) => {
+      if (!concerns) return '';
+      if (Array.isArray(concerns)) {
+        return concerns.map(c => `• ${c}`).join('\n');
+      }
+      return `• ${concerns}`;
+    };
+
     const message = `
-🎉 *פנייה חדשה מהאתר!*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎉  *פנייה חדשה מהאתר!*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📋 *סוג אירוע:* ${leadData.type}
+👤 *פרטי לקוח*
+───────────────────────────
+${leadData.name ? `שם: ${leadData.name}\n` : ''}📱 ${leadData.contactDetails || 'לא צוין'}
+💬 דרך יצירת קשר: ${leadData.contactMethod || 'לא צוין'}
 
-${leadData.hasDate ? `📅 *תאריך:* ${leadData.dateRange || leadData.hasDate}\n` : ''}
-👥 *אורחים:* ${leadData.guestCount}
+${leadData.type ? `💍 *פרטי האירוע*
+───────────────────────────
+סוג: ${leadData.type}
+${showIfExists('📅', 'תאריך', leadData.dateRange || leadData.hasDate)}${showIfExists('👥', 'אורחים', leadData.guestCount)}
+` : ''}${(leadData.style || leadData.budget || leadData.venue) ? `🎨 *העדפות*
+───────────────────────────
+${showIfExists('🎨', 'סטייל', leadData.style)}${showIfExists('💰', 'תקציב', leadData.budget)}${showIfExists('🏛️', 'מקום', leadData.venue)}
+` : ''}${leadData.priority ? `⭐ *מה חשוב*
+───────────────────────────
+${leadData.priority}
 
-🎨 *סטייל:* ${leadData.style}
+` : ''}${leadData.concern ? `😟 *דאגות*
+───────────────────────────
+${formatConcerns(leadData.concern)}
 
-💰 *תקציב:* ${leadData.budget}
+` : ''}${leadData.extra ? `📝 *הערות*
+───────────────────────────
+${leadData.extra}
 
-⭐ *חשוב להם:* ${leadData.priority}
-
-🤔 *דאגה:* ${leadData.concern}
-
-${leadData.venue ? `🏛️ *מקום:* ${leadData.venue}\n` : ''}
-${leadData.extra ? `📝 *הערות:*\n${leadData.extra}\n` : ''}
----
-📞 *יצירת קשר:* ${leadData.contactMethod}
-✉️ *פרטים:* ${leadData.contactDetails}
-
-⏰ ${new Date().toLocaleString('he-IL')}
+` : ''}━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⏰ ${new Date().toLocaleString('he-IL')} | 🤖 צ'אטבוט
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     `.trim();
 
     // פתיחת ווטסאפ עם ההודעה המוכנה
@@ -122,6 +145,7 @@ export async function POST(req) {
     if (leadData) {
       // תרגום הנתונים לעברית
       const translatedData = {
+        name: leadData.name || '',
         type: translations.type[leadData.type] || leadData.type,
         hasDate: leadData.hasDate ? translations.hasDate[leadData.hasDate] : '',
         dateRange: leadData.dateRange ? translations.dateRange[leadData.dateRange] : '',
