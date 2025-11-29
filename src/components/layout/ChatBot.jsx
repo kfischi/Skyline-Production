@@ -9,7 +9,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState([
     { 
       id: 1, 
-      text: chatFlow.start.message,
+      text: 'היי! זאת דנה AI, רוצים שאעזור לכם לתכנן את האירוע שלכם?\n\nבואו נתחיל\nאיזה אירוע מתכננים?',
       sender: 'bot',
       buttons: chatFlow.start.buttons
     }
@@ -18,6 +18,7 @@ export default function ChatBot() {
   const [userData, setUserData] = useState({});
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedConcerns, setSelectedConcerns] = useState([]);
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -29,6 +30,20 @@ export default function ChatBot() {
   }, [messages, isOpen]);
 
   const handleButtonClick = (button) => {
+    const currentStepData = chatFlow[currentStep];
+    
+    // אם זו שאלת בחירה מרובה
+    if (currentStepData.type === 'multiSelect') {
+      const index = selectedConcerns.indexOf(button.value);
+      if (index > -1) {
+        setSelectedConcerns(selectedConcerns.filter(v => v !== button.value));
+      } else {
+        setSelectedConcerns([...selectedConcerns, button.value]);
+      }
+      return;
+    }
+
+    // בחירה רגילה
     const stepData = {};
     stepData[currentStep] = button.value;
     
@@ -53,6 +68,36 @@ export default function ChatBot() {
         addBotMessage(nextStep, button.next);
         setCurrentStep(button.next);
       }
+    }, 300);
+  };
+
+  const handleMultiSelectSubmit = () => {
+    if (selectedConcerns.length === 0) return;
+
+    const stepData = {};
+    stepData[currentStep] = selectedConcerns;
+    
+    const newUserData = { ...userData, ...stepData };
+    setUserData(newUserData);
+
+    const concernsText = selectedConcerns.map(c => {
+      const btn = chatFlow.concern.buttons.find(b => b.value === c);
+      return btn ? btn.text : c;
+    }).join(', ');
+
+    const userMsg = {
+      id: Date.now(),
+      text: concernsText,
+      sender: 'user'
+    };
+    setMessages(prev => [...prev, userMsg]);
+
+    setSelectedConcerns([]);
+
+    setTimeout(() => {
+      const nextStep = chatFlow[chatFlow.concern.next];
+      addBotMessage(nextStep, chatFlow.concern.next);
+      setCurrentStep(chatFlow.concern.next);
     }, 300);
   };
 
@@ -128,29 +173,36 @@ export default function ChatBot() {
         className={styles.chatButton}
         aria-label="פתח צ'אט עם דנה"
       >
-        {isOpen ? (
-          <div style={{ 
-            width: '100%', 
-            height: '100%', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            background: 'linear-gradient(135deg, #C4A572 0%, #B39562 100%)',
-            borderRadius: '50%'
-          }}>
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </div>
-        ) : (
-          <img 
-            src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
-            alt="דנה - Skyline Productions"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
-          />
+        <div className={styles.chatButtonCircle}>
+          {isOpen ? (
+            <div style={{ 
+              width: '100%', 
+              height: '100%', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              background: 'linear-gradient(135deg, #C4A572 0%, #B39562 100%)',
+              borderRadius: '50%'
+            }}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+          ) : (
+            <img 
+              src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
+              alt="דנה"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          )}
+        </div>
+        {!isOpen && (
+          <>
+            <span className={styles.chatButtonText}>דברו איתי על האירוע שלכם</span>
+            <span className={styles.notification}></span>
+          </>
         )}
-        {!isOpen && <span className={styles.notification}></span>}
       </button>
 
       {/* חלון הצ'אט */}
@@ -201,11 +253,24 @@ export default function ChatBot() {
                       <button
                         key={idx}
                         onClick={() => handleButtonClick(btn)}
-                        className={styles.choiceButton}
+                        className={`${styles.choiceButton} ${
+                          chatFlow[currentStep]?.type === 'multiSelect' && selectedConcerns.includes(btn.value)
+                            ? styles.choiceButtonSelected
+                            : ''
+                        }`}
                       >
+                        {chatFlow[currentStep]?.type === 'multiSelect' && selectedConcerns.includes(btn.value) && '✓ '}
                         {btn.text}
                       </button>
                     ))}
+                    {chatFlow[currentStep]?.type === 'multiSelect' && selectedConcerns.length > 0 && (
+                      <button
+                        onClick={handleMultiSelectSubmit}
+                        className={styles.submitMultiButton}
+                      >
+                        שלח ({selectedConcerns.length}) ✓
+                      </button>
+                    )}
                   </div>
                 )}
 
