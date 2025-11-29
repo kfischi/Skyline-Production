@@ -1,62 +1,59 @@
 import { NextResponse } from 'next/server';
 import { translations } from '@/lib/chatFlow';
 
-// שליחת הודעת ווטסאפ לדנה - כרטיס לקוח מעוצב
+// שליחת הודעת ווטסאפ לדנה - פורמט קצר ונקי
 async function sendWhatsAppToDana(leadData) {
   try {
     const phoneNumber = '972546203038'; // מספר דנה בפורמט בינלאומי
     
     // פונקציית עזר להסתרת שורות ריקות
-    const showIfExists = (emoji, label, value) => {
-      return value ? `${emoji} ${label}: ${value}\n` : '';
+    const showIfExists = (label, value) => {
+      return value ? `${label}: ${value}` : '';
     };
 
     // פורמט דאגות (יכול להיות מערך)
     const formatConcerns = (concerns) => {
       if (!concerns) return '';
       if (Array.isArray(concerns)) {
-        return concerns.map(c => `• ${c}`).join('\n');
+        return concerns.join(', ');
       }
-      return `• ${concerns}`;
+      return concerns;
     };
 
-    const message = `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎉  *פנייה חדשה מהאתר!*
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // בניית הודעה קצרה וממוקדת
+    const parts = [
+      `🎉 *פנייה חדשה*`,
+      '',
+      leadData.name ? `👤 ${leadData.name}` : '',
+      leadData.contactDetails ? `📱 ${leadData.contactDetails}` : '',
+      '',
+      leadData.type ? `💍 ${leadData.type}` : '',
+      showIfExists('📅', leadData.dateRange || leadData.hasDate),
+      showIfExists('👥', leadData.guestCount),
+      '',
+      showIfExists('💰', leadData.budget),
+      showIfExists('🎨', leadData.style),
+      showIfExists('🏛️', leadData.venue),
+      '',
+      leadData.priority ? `⭐ ${leadData.priority}` : '',
+      leadData.concern ? `😟 ${formatConcerns(leadData.concern)}` : '',
+      '',
+      leadData.extra ? `📝 ${leadData.extra}` : '',
+      '',
+      `⏰ ${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}`
+    ];
 
-👤 *פרטי לקוח*
-───────────────────────────
-${leadData.name ? `שם: ${leadData.name}\n` : ''}📱 ${leadData.contactDetails || 'לא צוין'}
-💬 דרך יצירת קשר: ${leadData.contactMethod || 'לא צוין'}
-
-${leadData.type ? `💍 *פרטי האירוע*
-───────────────────────────
-סוג: ${leadData.type}
-${showIfExists('📅', 'תאריך', leadData.dateRange || leadData.hasDate)}${showIfExists('👥', 'אורחים', leadData.guestCount)}
-` : ''}${(leadData.style || leadData.budget || leadData.venue) ? `🎨 *העדפות*
-───────────────────────────
-${showIfExists('🎨', 'סטייל', leadData.style)}${showIfExists('💰', 'תקציב', leadData.budget)}${showIfExists('🏛️', 'מקום', leadData.venue)}
-` : ''}${leadData.priority ? `⭐ *מה חשוב*
-───────────────────────────
-${leadData.priority}
-
-` : ''}${leadData.concern ? `😟 *דאגות*
-───────────────────────────
-${formatConcerns(leadData.concern)}
-
-` : ''}${leadData.extra ? `📝 *הערות*
-───────────────────────────
-${leadData.extra}
-
-` : ''}━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⏰ ${new Date().toLocaleString('he-IL')} | 🤖 צ'אטבוט
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    `.trim();
+    // הסרת שורות ריקות כפולות
+    const message = parts
+      .filter(line => line !== undefined && line !== null)
+      .join('\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
 
     // פתיחת ווטסאפ עם ההודעה המוכנה
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
+    console.log('📱 WhatsApp message:', message);
     console.log('📱 WhatsApp URL:', whatsappUrl);
     
     return { success: true, whatsappUrl };
