@@ -129,6 +129,8 @@ export default function ChatBot() {
     const stepData = {};
     if (currentStepData.id === 'freeText') {
       stepData.extra = input.trim();
+    } else if (currentStepData.id === 'name') {
+      stepData.name = input.trim();
     } else if (currentStepData.type === 'phone' || currentStepData.type === 'email') {
       stepData.contactDetails = input.trim();
     }
@@ -201,13 +203,14 @@ export default function ChatBot() {
             <img 
               src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
               alt="דנה"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           )}
         </div>
         {!isOpen && (
           <>
-            <span className={styles.chatButtonText}>דברו איתי על האירוע שלכם</span>
+            <span className={styles.chatButtonText}>
+              דברו איתי<br />על האירוע שלכם
+            </span>
             <span className={styles.notification}></span>
           </>
         )}
@@ -222,7 +225,6 @@ export default function ChatBot() {
               <img 
                 src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
                 alt="דנה"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
               />
             </div>
             <div>
@@ -243,9 +245,8 @@ export default function ChatBot() {
                       '👤'
                     ) : (
                       <img 
-                        src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
+                        src="https://res.cloudinary.com/dptyfvwyo/image/upload/v1764427839/%D7%93%D7%A9%D7%94_%D7%91%D7%95%D7%98_vlfygc_e_background_removal_f_png_haed30.png"
                         alt="דנה"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
                       />
                     )}
                   </div>
