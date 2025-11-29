@@ -1,11 +1,11 @@
-/* כפתור צף */
+/* כפתור צף - צד ימין */
 .chatButton {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
   z-index: 1000;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
   border: 3px solid white;
   border-radius: 50%;
@@ -15,7 +15,15 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(196, 165, 114, 0.5);
-  color: white;
+  overflow: hidden;
+  padding: 0;
+}
+
+.chatButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .chatButton:hover {
@@ -30,10 +38,11 @@
 .notification {
   position: absolute;
   top: -4px;
-  right: -4px;
-  width: 16px;
-  height: 16px;
+  left: -4px;
+  width: 20px;
+  height: 20px;
   background: #ef4444;
+  border: 3px solid white;
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -49,11 +58,11 @@
   }
 }
 
-/* חלון הצ'אט */
+/* חלון הצ'אט - צד ימין */
 .chatWindow {
   position: fixed;
-  bottom: 100px;
-  left: 24px;
+  bottom: 110px;
+  right: 24px;
   width: 380px;
   max-width: calc(100vw - 48px);
   height: 550px;
@@ -248,6 +257,109 @@
   }
 }
 
+/* כפתורי בחירה */
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 12px 16px 50px;
+}
+
+.choiceButton {
+  background: rgba(196, 165, 114, 0.1);
+  border: 1px solid rgba(196, 165, 114, 0.3);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.choiceButton:hover {
+  background: rgba(196, 165, 114, 0.2);
+  border-color: var(--color-accent);
+  transform: translateX(-4px);
+}
+
+.choiceButton:active {
+  transform: translateX(-2px) scale(0.98);
+}
+
+/* שדות טקסט */
+.textInputContainer {
+  padding: 0 12px 16px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.textInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.textButtons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.skipButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.skipButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #D4B582 0%, #C3A572 100%);
+  transform: scale(1.05);
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* איזור הקלדה */
 .inputArea {
   padding: 16px;
@@ -309,17 +421,17 @@
 /* Responsive */
 @media (max-width: 768px) {
   .chatButton {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     bottom: 20px;
-    left: 20px;
+    right: 20px;
   }
 
   .chatWindow {
     width: calc(100vw - 40px);
     height: calc(100vh - 140px);
     bottom: 90px;
-    left: 20px;
+    right: 20px;
   }
 
   .messageBubble {
