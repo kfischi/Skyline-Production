@@ -21,9 +21,8 @@ export default function MethodPage() {
           <source src={oldHeroVideo} type="video/mp4" />
         </video>
         <div className={styles.heroOverlay}></div>
-        <div className={styles.heroContent}>
-          <h1>השיטה שלנו</h1>
-          <p>החזון שלכם. התכנון שלנו. השקט הנפשי שלכם.</p>
+        <div className={styles.heroBreadcrumb}>
+          <h1>השיטה</h1>
         </div>
       </section>
 
@@ -31,7 +30,7 @@ export default function MethodPage() {
       <div className={styles.contentWrapper}>
         <header className={styles.header}>
           <p className={styles.intro}>
-            רוב מפיקי האירועים יראו לכם גלריה יפה. אנחנו מאמינים שאירוע מושלם מתחיל בתכנון אסטרטגי וניהול ברזל מאחורי הקלעים.
+            רוב מפיקי האירועים יראו לכם גלריה יפה. אנחנו מאמינים שאירוע מושלם מתחיל בתכנון אסטרטגי וניהול מדויק מאחורי הקלעים.
           </p>
         </header>
 
@@ -58,7 +57,7 @@ export default function MethodPage() {
               <h2 className={styles.stepTitle}>ליקוט וניהול (The Curation)</h2>
               <p className={styles.stepDescription}>
                 אחרי שפיצחנו את הקונספט, אנחנו מרכיבים את הנבחרת.
-                הצוות שלנו מנהל את כל החוזים, הלוגיסטיקה ובניית הלו"ז המילימטרי.
+                הצוות שלנו מנהל את כל החוזים, הלוגיסטיקה ובניית הלו"ז לפרטי פרטים.
               </p>
             </div>
             <div className={styles.stepVisual}>
