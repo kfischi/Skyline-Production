@@ -1,5 +1,4 @@
 import styles from './ProductionRoom.module.css';
-import VideoPlayer from '@/components/ui/VideoPlayer';
 
 export const metadata = {
   title: 'חדר ההפקה | Skyline Productions',
@@ -42,7 +41,7 @@ const videos = [
 export default function ProductionRoomPage() {
   return (
     <div className={styles.pageContainer}>
-      {/* Hero Section */}
+      {/* Header */}
       <header className={styles.header}>
         <div className={styles.breadcrumb}>חדר ההפקה</div>
         <h1>מתוך חדר ההפקה</h1>
@@ -53,7 +52,17 @@ export default function ProductionRoomPage() {
       <div className={styles.videosGrid}>
         {videos.map((video) => (
           <div key={video.id} className={styles.videoCard}>
-            <VideoPlayer url={video.url} title={video.title} />
+            <div className={styles.videoWrapper}>
+              <video 
+                controls
+                className={styles.video}
+                preload="metadata"
+                playsInline
+              >
+                <source src={video.url} type="video/mp4" />
+                הדפדפן שלך לא תומך בוידאו.
+              </video>
+            </div>
             <div className={styles.videoInfo}>
               <h3 className={styles.videoTitle}>{video.title}</h3>
               <p className={styles.videoDescription}>{video.description}</p>
