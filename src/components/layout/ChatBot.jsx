@@ -29,6 +29,15 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages, isOpen]);
 
+  // פתיחה אוטומטית אחרי 5 שניות
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 5000); // 5 שניות
+
+    return () => clearTimeout(timer);
+  }, []); // רק פעם אחת כשהקומפוננטה נטענת
+
   const handleButtonClick = (button) => {
     const currentStepData = chatFlow[currentStep];
     
@@ -209,7 +218,7 @@ export default function ChatBot() {
         {!isOpen && (
           <>
             <span className={styles.chatButtonText}>
-              דברו איתי<br />על האירוע שלכם
+              צ'אט עם דנה
             </span>
             <span className={styles.notification}></span>
           </>
