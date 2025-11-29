@@ -113,6 +113,14 @@ export const chatFlow = {
     type: 'text',
     placeholder: 'כתבו כאן...',
     skipButton: true,
+    next: 'name'
+  },
+
+  name: {
+    id: 'name',
+    message: 'מה השם שלכם? 😊',
+    type: 'text',
+    placeholder: 'שם מלא',
     next: 'contactMethod'
   },
 
