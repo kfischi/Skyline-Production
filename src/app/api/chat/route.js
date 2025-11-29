@@ -140,25 +140,29 @@ export async function POST(req) {
 
     // אם זה שליחת פרטים סופית
     if (leadData) {
+      console.log('📊 Original leadData:', leadData);
+      
       // תרגום הנתונים לעברית
       const translatedData = {
         name: leadData.name || '',
-        type: translations.type[leadData.type] || leadData.type,
+        type: translations.type[leadData.type] || leadData.type || 'לא צוין',
         hasDate: leadData.hasDate ? translations.hasDate[leadData.hasDate] : '',
         dateRange: leadData.dateRange ? translations.dateRange[leadData.dateRange] : '',
-        guestCount: translations.guestCount[leadData.guestCount] || leadData.guestCount,
-        style: translations.style[leadData.style] || leadData.style,
-        budget: translations.budget[leadData.budget] || leadData.budget,
-        priority: translations.priority[leadData.priority] || leadData.priority,
+        guestCount: translations.guestCount[leadData.guestCount] || leadData.guestCount || '',
+        style: translations.style[leadData.style] || leadData.style || '',
+        budget: translations.budget[leadData.budget] || leadData.budget || '',
+        priority: translations.priority[leadData.priority] || leadData.priority || '',
         // תמיכה בדאגות מרובות
         concern: Array.isArray(leadData.concern) 
           ? leadData.concern.map(c => translations.concern[c] || c).join(', ')
-          : (translations.concern[leadData.concern] || leadData.concern),
+          : (translations.concern[leadData.concern] || leadData.concern || ''),
         venue: leadData.venue ? translations.venue[leadData.venue] : '',
         extra: leadData.extra || '',
-        contactMethod: translations.contactMethod[leadData.contactMethod] || leadData.contactMethod,
+        contactMethod: translations.contactMethod[leadData.contactMethod] || leadData.contactMethod || '',
         contactDetails: leadData.contactDetails || ''
       };
+
+      console.log('📊 Translated data:', translatedData);
 
       // שליחת ווטסאפ לדנה
       const whatsappResult = await sendWhatsAppToDana(translatedData);
