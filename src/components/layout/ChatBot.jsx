@@ -137,15 +137,23 @@ export default function ChatBot() {
     setUserData(newUserData);
     setInput("");
 
+    // אם זה שלב הפרטים - שלח לדנה!
     if (currentStepData.type === 'phone' || currentStepData.type === 'email') {
       setIsLoading(true);
       
       try {
-        await fetch('/api/chat', {
+        const response = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ leadData: newUserData })
         });
+
+        const data = await response.json();
+        
+        if (data.success && data.whatsappUrl) {
+          // פתח ווטסאפ בחלון חדש
+          window.open(data.whatsappUrl, '_blank');
+        }
       } catch (error) {
         console.error('Error sending data:', error);
       } finally {
@@ -299,6 +307,44 @@ export default function ChatBot() {
                         {isLoading ? '...' : 'שלח 📤'}
                       </button>
                     </div>
+                  </div>
+                )}
+
+                {/* כפתור שליחה לווטסאפ בסוף */}
+                {msg.type === 'final' && msg.sender === 'bot' && (
+                  <div className={styles.finalButtonContainer}>
+                    <button 
+                      onClick={async () => {
+                        setIsLoading(true);
+                        try {
+                          const response = await fetch('/api/chat', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ leadData: userData })
+                          });
+                          const data = await response.json();
+                          if (data.success && data.whatsappUrl) {
+                            window.open(data.whatsappUrl, '_blank');
+                            
+                            // הוספת הודעת אישור
+                            const confirmMsg = {
+                              id: Date.now() + 1,
+                              text: '✅ הווטסאפ נפתח! אם לא נפתח, לחץ על הכפתור שוב או פנה ישירות: 052-620-3038',
+                              sender: 'bot'
+                            };
+                            setMessages(prev => [...prev, confirmMsg]);
+                          }
+                        } catch (error) {
+                          console.error('Error:', error);
+                        } finally {
+                          setIsLoading(false);
+                        }
+                      }}
+                      disabled={isLoading}
+                      className={styles.whatsappButton}
+                    >
+                      {isLoading ? '📤 שולח...' : '💬 שלח פרטים לדנה בווטסאפ'}
+                    </button>
                   </div>
                 )}
               </div>
