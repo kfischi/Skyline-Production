@@ -2,7 +2,7 @@
 
 export const chatFlow = {
   start: {
-    id: 'start',
+    id: 'type', // שמירה בשם 'type' במקום 'start'
     message: 'היי! אני עוזר לתכנן אירועים עם דנה מ-Skyline.\nבואו נתחיל - איזה אירוע מתכננים?',
     buttons: [
       { text: 'חתונה 💍', value: 'wedding', next: 'hasDate' },
