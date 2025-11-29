@@ -4,47 +4,69 @@
   bottom: 24px;
   right: 24px;
   z-index: 1000;
-  width: 70px;
-  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chatButtonCircle {
+  width: 85px;
+  height: 85px;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
-  border: 3px solid white;
+  border: 4px solid white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 8px 25px rgba(196, 165, 114, 0.5);
   overflow: hidden;
-  padding: 0;
+  padding: 8px;
+  transition: all 0.3s ease;
 }
 
-.chatButton img {
+.chatButton:hover .chatButtonCircle {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(196, 165, 114, 0.6);
+}
+
+.chatButton:active .chatButtonCircle {
+  transform: scale(1.05);
+}
+
+.chatButtonCircle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
 
-.chatButton:hover {
-  transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(196, 165, 114, 0.6);
-}
-
-.chatButton:active {
-  transform: scale(1.05);
+.chatButtonText {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .notification {
   position: absolute;
   top: -4px;
   left: -4px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: #ef4444;
   border: 3px solid white;
   border-radius: 50%;
   animation: pulse 2s infinite;
+  z-index: 10;
 }
 
 @keyframes pulse {
@@ -181,14 +203,16 @@
 }
 
 .messageAvatar {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: 18px;
+  overflow: hidden;
+  padding: 2px;
 }
 
 .userMessage .messageAvatar {
@@ -197,6 +221,14 @@
 
 .botMessage .messageAvatar {
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
+  padding: 4px;
+}
+
+.botMessage .messageAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .messageBubble {
@@ -285,6 +317,31 @@
 
 .choiceButton:active {
   transform: translateX(-2px) scale(0.98);
+}
+
+.choiceButtonSelected {
+  background: rgba(196, 165, 114, 0.3);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.submitMultiButton {
+  background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
+  border: none;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.submitMultiButton:hover {
+  background: linear-gradient(135deg, #D4B582 0%, #C3A572 100%);
+  transform: translateX(-4px) scale(1.05);
 }
 
 /* שדות טקסט */
@@ -421,10 +478,18 @@
 /* Responsive */
 @media (max-width: 768px) {
   .chatButton {
-    width: 60px;
-    height: 60px;
     bottom: 20px;
     right: 20px;
+  }
+
+  .chatButtonCircle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .chatButtonText {
+    font-size: 0.75rem;
+    padding: 6px 12px;
   }
 
   .chatWindow {
