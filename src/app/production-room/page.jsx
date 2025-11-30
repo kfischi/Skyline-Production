@@ -1,3 +1,5 @@
+"use client";
+import { useRef } from 'react';
 import styles from './ProductionRoom.module.css';
 
 export const metadata = {
@@ -39,6 +41,25 @@ const videos = [
 ];
 
 export default function ProductionRoomPage() {
+  const videoRefs = useRef({});
+
+  const toggleFullscreen = (videoId) => {
+    const video = videoRefs.current[videoId];
+    if (video) {
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch(() => {
+          console.log('Fullscreen not available');
+        });
+      } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+      } else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+    }
+  };
+
   return (
     <div className={styles.pageContainer}>
       {/* Header */}
@@ -54,7 +75,9 @@ export default function ProductionRoomPage() {
           <div key={video.id} className={styles.videoCard}>
             <div className={styles.videoWrapper}>
               <video 
+                ref={(el) => { if (el) videoRefs.current[video.id] = el; }}
                 controls
+                controlsList="nodownload"
                 className={styles.video}
                 preload="metadata"
                 playsInline
@@ -62,6 +85,16 @@ export default function ProductionRoomPage() {
                 <source src={video.url} type="video/mp4" />
                 הדפדפן שלך לא תומך בוידאו.
               </video>
+              <button 
+                className={styles.fullscreenBtn}
+                onClick={() => toggleFullscreen(video.id)}
+                aria-label="מצב מלא"
+                title="מצב מלא"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                </svg>
+              </button>
             </div>
             <div className={styles.videoInfo}>
               <h3 className={styles.videoTitle}>{video.title}</h3>
