@@ -57,6 +57,7 @@ export default function Footer() {
             <li><Link href="/method">השיטה</Link></li>
             <li><Link href="/portfolio">הביצוע</Link></li>
             <li><Link href="/production-room">חדר ההפקה</Link></li>
+            <li><Link href="/podcast">פודקאסט</Link></li> {/* ⬅️ חדש! */}
             <li><Link href="/about">אודות</Link></li>
             <li><Link href="/testimonials">המלצות</Link></li>
           </ul>
