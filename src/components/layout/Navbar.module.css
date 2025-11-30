@@ -62,27 +62,32 @@
 .navLinks li {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
-.navLinks a {
+.navLink {
   font-family: 'Assistant', sans-serif;
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--color-text-dark);
   position: relative;
-  padding-bottom: 5px;
+  padding: 12px 16px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   white-space: nowrap;
+  border-radius: 8px;
+  text-decoration: none;
+  display: block;
 }
 
-.navbar:not(.scrolled) .navLinks a {
+.navbar:not(.scrolled) .navLink {
   color: white;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.navLinks a::after {
+/* ===== ACTIVE LINK INDICATOR ===== */
+.navLink::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -93,14 +98,36 @@
   transition: width 0.3s ease;
 }
 
-.navLinks a:hover {
+.navLink:hover {
   color: var(--color-accent);
+  background: rgba(196, 165, 114, 0.08);
 }
 
-.navLinks a:hover::after {
+.navLink:hover::after {
   width: 100%;
 }
 
+/* ACTIVE STATE */
+.navLink.active {
+  color: var(--color-accent);
+  background: rgba(196, 165, 114, 0.12);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(196, 165, 114, 0.2);
+}
+
+.navLink.active::after {
+  width: 100%;
+  height: 3px;
+}
+
+.navbar:not(.scrolled) .navLink.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== CTA BUTTON ===== */
 .ctaButton {
   font-family: 'Assistant', sans-serif;
   font-size: 1rem;
@@ -117,6 +144,7 @@
   box-shadow: 0 3px 12px rgba(196, 165, 114, 0.4);
   white-space: nowrap;
   order: 3;
+  text-decoration: none;
 }
 
 .ctaButton:hover {
@@ -124,7 +152,7 @@
   box-shadow: 0 5px 20px rgba(196, 165, 114, 0.5);
 }
 
-/* תפריט המבורגר */
+/* ===== HAMBURGER MENU ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -163,7 +191,7 @@
   transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* תפריט נייד */
+/* ===== MOBILE MENU ===== */
 .mobileMenu {
   position: fixed;
   top: 0;
@@ -202,13 +230,27 @@
   font-size: 1.3rem;
   font-weight: 500;
   color: var(--color-text-dark);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   display: block;
-  padding: 12px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
 }
 
 .mobileNavLinks a:hover {
   color: var(--color-accent);
+  background: rgba(196, 165, 114, 0.08);
+}
+
+/* MOBILE ACTIVE STATE */
+.mobileNavLinks a.mobileActive {
+  color: var(--color-accent);
+  background: rgba(196, 165, 114, 0.12);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px rgba(196, 165, 114, 0.2);
+  border-left: 4px solid var(--color-accent);
+  padding-left: 12px;
 }
 
 .mobileCtaButton {
@@ -226,8 +268,16 @@
   letter-spacing: 0.5px;
   margin-top: 15px;
   box-shadow: 0 4px 15px rgba(196, 165, 114, 0.3);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
+.mobileCtaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 165, 114, 0.4);
+}
+
+/* ===== OVERLAY ===== */
 .overlay {
   position: fixed;
   top: 0;
@@ -248,14 +298,15 @@
   }
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .navLinks {
     gap: 25px;
   }
   
-  .navLinks a {
+  .navLink {
     font-size: 1.05rem;
+    padding: 10px 12px;
   }
 }
 
@@ -279,5 +330,36 @@
 
   .logo {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .mobileMenu {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 80px;
+  }
+
+  .mobileNavLinks {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .mobileNavLinks a {
+    font-size: 1.1rem;
+    padding: 10px 12px;
+  }
+
+  .mobileCtaButton {
+    font-size: 1rem;
+    padding: 14px 24px;
   }
 }
