@@ -2,8 +2,8 @@ import styles from './About.module.css';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'דנה בר מייזליס | Skyline Productions',
-  description: 'מארגנת אירועים שמשנים משחק. 9 שנים של ניסיון. מאות אירועים. מאה אחוז שביעות רצון.',
+  title: 'דנה בר מייזליס | Skyline Events',
+  description: 'להפוך את ה"וואו" שבראש שלכם – למציאות. 9 שנים, 200+ אירועים, 100% שביעות רצון.',
 };
 
 export default function AboutPage() {
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
   return (
     <div className={styles.container}>
-      {/* HERO - תמונה בלבד */}
+      {/* HERO */}
       <section className={styles.heroSection}>
         <img 
           src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764538259/%D7%93%D7%A0%D7%94_%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99_%D7%94%D7%A4%D7%A7%D7%95%D7%AA_%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D_kxjwin.png"
@@ -64,37 +64,37 @@ export default function AboutPage() {
         <div className={styles.heroOverlay}></div>
       </section>
 
-      {/* ABOUT - הסיפור האמיתי */}
+      {/* ABOUT */}
       <section className={styles.aboutSection}>
         <div className={styles.aboutContainer}>
-          <div className={styles.aboutText}>
-            <h1>דנה</h1>
-            <p>
-              אני מארגנת אירועים. זה לא ההגדרה הרשמית, בטח. הרשמית היא משהו עם מילים כמו "ניהול פרויקטים" ו"קורדינציה". אבל זה לא זה.
-            </p>
-            <p>
-              אני לוקחת את החלום שלך - הדבר שאתה רואה בעיניים כשאתה סוגר עיניים - ואני הופכת את זה לממש. עם כסף שסופי, עם אנשים שלא מוזלים, עם פרטים שאתה בכלל לא חשבת עליהם.
-            </p>
-            <p>
-              תשע שנים שאני עושה את זה. מאות אירועים. כל אחד שונה. כל אחד חושב שהוא הייחודי שלי (וזה נכון, אבל לא רק שלו).
-            </p>
-            <p className={styles.emphasis}>
-              אני לא עושה אירועים. אני עושה חוויות שמשנות את היום שלך.
-            </p>
+          <h1>דנה | Skyline Events</h1>
+          
+          <p className={styles.tagline}>
+            להפוך את ה"וואו" שבראש שלכם – למציאות.
+          </p>
 
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <div className={styles.statNumber}>9+</div>
-                <div className={styles.statLabel}>שנים</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statNumber}>200+</div>
-                <div className={styles.statLabel}>אירועים</div>
-              </div>
-              <div className={styles.stat}>
-                <div className={styles.statNumber}>100%</div>
-                <div className={styles.statLabel}>מרוצים</div>
-              </div>
+          <div className={styles.story}>
+            <p>
+              נעים להכיר. על הנייר? אני "מפיקת אירועים". בפועל? אני הגשר בין הדמיון לקרקע. לכולנו יש את התמונה הזו בראש – הרגע המושלם, האווירה, הצבעים. אבל הדרך לשם רצופה באקסלים, לוגיסטיקה, ספקים ולחץ.
+            </p>
+            
+            <p>
+              כאן אני נכנסת. אני המקום שבו הרגש פוגש את התכנון המדויק. אחרי 9 שנים וקרוב ל-200 אירועים, אני מביאה איתי ארגז כלים שהוא שילוב נדיר בין לב ענק לראש שקט. ב-Skyline אין מקום למזל, ואין "בערך". יש רק דבר אחד: אירוע שהוא בול אתם.
+            </p>
+          </div>
+
+          <div className={styles.stats}>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>9+</div>
+              <div className={styles.statLabel}>שנות ניסיון</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>200+</div>
+              <div className={styles.statLabel}>אירועים</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>100%</div>
+              <div className={styles.statLabel}>מרוצים</div>
             </div>
           </div>
         </div>
@@ -103,41 +103,35 @@ export default function AboutPage() {
       {/* PHILOSOPHY */}
       <section className={styles.philosophySection}>
         <div className={styles.philosophyContainer}>
-          <h2>איך אני עובדת</h2>
+          <h2>המצפן שלי</h2>
+          <p className={styles.philosophySubtitle}>(או: למה אתם יכולים להיות רגועים)</p>
           
           <div className={styles.philosophyGrid}>
             <div className={styles.philosophyCard}>
-              <h3>פרטים קטנים עושים הבדל גדול</h3>
+              <h3>רואים את מה ששקוף לאחרים</h3>
               <p>
-                אני לא מדברת על צבע הנר. אני מדברת על העובדה שהוא כבה בשנייה שלוש כי הרוח הוא מעבודת היד של מישהו שלא בדק אם הוא עומד למהירות של מנוע.
+                כולם מסתכלים על העיצוב של הנר? מצוין. אני מסתכלת על כיוון הרוח מהמזגן, כדי לוודא שהוא לא יכבה ברגע השיא. המומחיות שלי היא לחשוב על הפרטים הקטנים והבלתי צפויים, ולמנוע תקלות עוד לפני שהן נוצרו.
               </p>
             </div>
 
             <div className={styles.philosophyCard}>
-              <h3>אתה לא משום דבר אחר</h3>
+              <h3>נבחרת מנצחת בלבד</h3>
               <p>
-                כשאתה עם Skyline, אתה לא במערכת. אתה לא טיקט. אתה האדם שאני משקיעה בו כדי שהיום שלך יהיה ממש שלך.
+                אני לא מהמרת על האירוע שלכם. אני עובדת אך ורק עם אנשי המקצוע הכי חזקים בתעשייה. אנשים שבאים לתת את הנשמה, לא להעביר כרטיס. כשאתם איתי, אתם עטופים בטובים ביותר.
               </p>
             </div>
 
             <div className={styles.philosophyCard}>
-              <h3>איכות פירושה ביטול טוקנים</h3>
+              <h3>אתם האורחים, לא המנהלים</h3>
               <p>
-                אני לא עובדת עם "יזם צעיר" בניהול שלום. אני עובדת עם מומחים. אנשים שיודעים את העבודה שלהם עד הקצה של העיניים.
-              </p>
-            </div>
-
-            <div className={styles.philosophyCard}>
-              <h3>כל הרגשות בדרך הבחזקה</h3>
-              <p>
-                אתה רחוק מהלוגיסטיקה. אתה מהנה. אני ממלאה את כל הריק בהוקיו שלי ובשנות הניסיון שלי.
+                ביום האירוע התפקיד שלכם הוא אחד ויחיד: להתרגש, לחבק ולעוף באוויר. תשאירו לי את התיאומים, הריצות וה"כיבוי שריפות" מאחורי הקלעים. אני כאן כדי שאתם תוכלו פשוט לנשום וליהנות.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PODCASTS - NETFLIX STYLE */}
+      {/* PODCASTS */}
       <section className={styles.podcastSection}>
         <div className={styles.podcastContainer}>
           <div className={styles.podcastHeader}>
@@ -169,9 +163,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* WORK - אירועים בולטים */}
-      <section className={styles.workSection}>
-        <div className={styles.workContainer}>
+      {/* EVENTS */}
+      <section className={styles.eventsSection}>
+        <div className={styles.eventsContainer}>
           <h2>אירועים שעזבו רושם</h2>
 
           <div className={styles.eventsList}>
@@ -212,7 +206,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className={styles.workCta}>
+          <div className={styles.eventsCta}>
             <Link href="/portfolio">צפה בכל הקונספטים</Link>
           </div>
         </div>
@@ -240,7 +234,7 @@ export default function AboutPage() {
 
             <div className={styles.testimonialCard}>
               <p>
-                "אני חשבתי שחתונה בשחור תהיה דכאונית. דנה הוכיחה לי שזה יכול להיות רוקן. זה היה."
+                "חשבתי שחתונה בשחור תהיה דכאונית. דנה הוכיחה לי שזה יכול להיות רוקן. זה היה."
               </p>
               <span>רועי ושירה</span>
             </div>
@@ -251,8 +245,8 @@ export default function AboutPage() {
       {/* FINAL CTA */}
       <section className={styles.finalSection}>
         <div className={styles.finalContainer}>
-          <h2>יש לך חלום שאתה לא רוצה לרסק</h2>
-          <p>בואו נדבר. זה לא התחייבות. זה בדיקה של זה שנכנסים לאותה תדר.</p>
+          <h2>זה הסיפור שלי.</h2>
+          <p>עכשיו בואו ניצור את הסיפור שלכם. דברו איתי.</p>
           <a href="mailto:info@skylineproductions.com" className={styles.finalCta}>
             תיאום פגישה
           </a>
