@@ -52,6 +52,26 @@ export default function AboutPage() {
     }
   ];
 
+  // תודות בלי כפילויות
+  const testimonials = [
+    {
+      id: 1,
+      image: 'https://res.cloudinary.com/daez7e9nj/image/upload/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg'
+    },
+    {
+      id: 2,
+      image: 'https://res.cloudinary.com/daez7e9nj/image/upload/v1764527684/Screenshot_20210927-145807_WhatsAppBusiness_kbi3xk.jpg'
+    },
+    {
+      id: 3,
+      image: 'https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-190734_Samsung_Internet_gmvuxw.jpg'
+    },
+    {
+      id: 4,
+      image: 'https://res.cloudinary.com/daez7e9nj/image/upload/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg'
+    }
+  ];
+
   return (
     <div className={styles.container}>
       {/* HERO */}
@@ -131,7 +151,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* PODCASTS */}
+      {/* PODCASTS - NETFLIX STYLE */}
       <section className={styles.podcastSection}>
         <div className={styles.podcastContainer}>
           <div className={styles.podcastHeader}>
@@ -150,12 +170,16 @@ export default function AboutPage() {
                     className={styles.podcastVideo}
                     controls
                     controlsList="nodownload"
+                    playsInline
                   />
+                  <div className={styles.podcastOverlay}>
+                    <span className={styles.playIcon}>▶</span>
+                  </div>
                 </div>
                 <div className={styles.podcastInfo}>
                   <h3>{podcast.title}</h3>
                   <p className={styles.podcastDesc}>{podcast.description}</p>
-                  <span className={styles.duration}>{podcast.duration}</span>
+                  <span className={styles.duration}>⏱ {podcast.duration}</span>
                 </div>
               </div>
             ))}
@@ -198,67 +222,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS COLLAGE */}
+      {/* TESTIMONIALS COLLAGE - NO DUPLICATES */}
       <section className={styles.testimonialsSection}>
         <div className={styles.testimonialsContainer}>
           <h2>מה הם אומרים</h2>
           <p className={styles.testimonialsSubtitle}>תודות ממי שבא לאחרונה לטיול עם Skyline</p>
 
           <div className={styles.collageGrid}>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg"
-                alt="תודה 1"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527684/Screenshot_20210927-145807_WhatsAppBusiness_kbi3xk.jpg"
-                alt="תודה 2"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-190734_Samsung_Internet_gmvuxw.jpg"
-                alt="תודה 3"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg"
-                alt="תודה 4"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg"
-                alt="תודה 5"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527684/Screenshot_20210927-145807_WhatsAppBusiness_kbi3xk.jpg"
-                alt="תודה 6"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-190734_Samsung_Internet_gmvuxw.jpg"
-                alt="תודה 7"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg"
-                alt="תודה 8"
-              />
-            </div>
-            <div className={styles.collageItem}>
-              <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg"
-                alt="תודה 9"
-              />
-            </div>
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className={styles.collageItem}>
+                <img 
+                  src={testimonial.image}
+                  alt={`תודה ${testimonial.id}`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
