@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import styles from './ChatBot.module.css';
 import { chatFlow, translations } from '@/lib/chatFlow';
 
+// ChatBot הוא client component - בסדר מלא
+
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
