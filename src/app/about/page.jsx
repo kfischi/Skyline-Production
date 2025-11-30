@@ -2,214 +2,261 @@ import styles from './About.module.css';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'דנה - הפודקאסט | Skyline Productions',
-  description: 'דנה בר מייזליס - מארגנת אירועים מובילה בישראל. 9+ שנים של ניסיון, 200+ אירועים, 100% שביעות רצון.',
+  title: 'דנה בר מייזליס | Skyline Productions',
+  description: 'מארגנת אירועים שמשנים משחק. 9 שנים של ניסיון. מאות אירועים. מאה אחוז שביעות רצון.',
 };
 
 export default function AboutPage() {
+  const podcasts = [
+    {
+      id: 1,
+      title: 'מחיר לא סופי',
+      duration: '18 דקות',
+      description: 'למה התקציב שלך לא יהיה מספיק ולמה זה בסדר',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528916/%D7%9E%D7%97%D7%99%D7%A8_%D7%9C%D7%90_%D7%A1%D7%95%D7%A4%D7%99_te573k.mp4'
+    },
+    {
+      id: 2,
+      title: 'ניקיון דבר ראשון',
+      duration: '14 דקות',
+      description: 'איך בוחרים אולם שלא יהיה חרא',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F_%D7%93%D7%91%D7%A8_%D7%A8%D7%90%D7%A9%D7%95%D7%9F_erd6zo.mp4'
+    },
+    {
+      id: 3,
+      title: 'בקרת איכות',
+      duration: '12 דקות',
+      description: 'איך אני בודקת שכל סרבר לא עושה קלקול',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%91%D7%A7%D7%A8%D7%AA_%D7%90%D7%99%D7%9B%D7%95%D7%AA_glxlod.mp4'
+    },
+    {
+      id: 4,
+      title: 'לנהל את המנהל',
+      duration: '16 דקות',
+      description: 'איך להגיד לצוות שהם מחמאים זה לא מספיק',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%9C%D7%A0%D7%94%D7%9C_%D7%90%D7%AA_%D7%94%D7%9E%D7%A0%D7%94%D7%9C_jo3sxf.mp4'
+    },
+    {
+      id: 5,
+      title: 'חתונה מאטל',
+      duration: '22 דקות',
+      description: 'שיא: איך עשינו חתונה שחורה ממש',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%AA%D7%95%D7%A0%D7%94_%D7%9E%D7%90%D7%98%D7%9C_xqtjnr.mp4'
+    },
+    {
+      id: 6,
+      title: 'חוזה מותנה טעימות',
+      duration: '11 דקות',
+      description: 'מה הטעים בחוזה וכמה זה עולה להתאכזב',
+      url: 'https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%95%D7%96%D7%94_%D7%9E%D7%95%D7%AA%D7%A0%D7%94_%D7%98%D7%A2%D7%99%D7%9E%D7%95%D7%AA_jjzy0r.mp4'
+    }
+  ];
+
   return (
     <div className={styles.container}>
-      {/* HERO SECTION - תמונה מלאה */}
+      {/* HERO - תמונה בלבד */}
       <section className={styles.heroSection}>
-        <div className={styles.heroBackground}>
-          <img 
-            src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764538259/%D7%93%D7%A0%D7%94_%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99_%D7%94%D7%A4%D7%A7%D7%95%D7%AA_%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D_kxjwin.png"
-            alt="דנה בר מייזליס"
-            className={styles.heroImage}
-          />
-          <div className={styles.heroOverlay}></div>
-        </div>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>דנה בר מייזליס</h1>
-          <p className={styles.heroSubtitle}>מארגנת אירועים בטופ המדינה</p>
-          <p className={styles.heroDescription}>
-            כשאתה רוצה שום דבר חוץ מעיצוב שעושה statement
-          </p>
-        </div>
+        <img 
+          src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764538259/%D7%93%D7%A0%D7%94_%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99_%D7%94%D7%A4%D7%A7%D7%95%D7%AA_%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D_kxjwin.png"
+          alt="דנה"
+          className={styles.heroImage}
+        />
+        <div className={styles.heroOverlay}></div>
       </section>
 
-      {/* ABOUT SECTION - מי היא דנה */}
+      {/* ABOUT - הסיפור האמיתי */}
       <section className={styles.aboutSection}>
-        <div className={styles.aboutWrapper}>
-          <div className={styles.aboutContent}>
-            <h2>הסיפור שלי</h2>
-            <p className={styles.paragraph}>
-              אני דנה, ומשנת 2015 אני עושה משהו פשוט - אני הופכת חזונות למציאות.
+        <div className={styles.aboutContainer}>
+          <div className={styles.aboutText}>
+            <h1>דנה</h1>
+            <p>
+              אני מארגנת אירועים. זה לא ההגדרה הרשמית, בטח. הרשמית היא משהו עם מילים כמו "ניהול פרויקטים" ו"קורדינציה". אבל זה לא זה.
             </p>
-            <p className={styles.paragraph}>
-              לא עבדתי עם כל אחד. לא עבדתי בכל מקום. בחרתי בקפידה את הפרויקטים שלי, את הצוות שלי, את ההשקפה שלי.
+            <p>
+              אני לוקחת את החלום שלך - הדבר שאתה רואה בעיניים כשאתה סוגר עיניים - ואני הופכת את זה לממש. עם כסף שסופי, עם אנשים שלא מוזלים, עם פרטים שאתה בכלל לא חשבת עליהם.
             </p>
-            <p className={styles.paragraph}>
-              התוצאה? 200+ אירועים שהפכו לסטורים. 100% של הלקוחות שלי שוב לקחו עמי. 15+ אנשים שעובדים לצד לצד כדי שכל פרט יהיה מושלם.
+            <p>
+              תשע שנים שאני עושה את זה. מאות אירועים. כל אחד שונה. כל אחד חושב שהוא הייחודי שלי (וזה נכון, אבל לא רק שלו).
             </p>
-            <p className={`${styles.paragraph} ${styles.highlight}`}>
-              זה לא רק עבודה. זה מיסיון.
+            <p className={styles.emphasis}>
+              אני לא עושה אירועים. אני עושה חוויות שמשנות את היום שלך.
             </p>
-          </div>
 
-          {/* STATS */}
-          <div className={styles.statsGrid}>
-            <div className={styles.statCard}>
-              <div className={styles.statNumber}>9+</div>
-              <div className={styles.statLabel}>שנות ניסיון</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className={styles.statNumber}>200+</div>
-              <div className={styles.statLabel}>אירועים שהפקתי</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className={styles.statNumber}>100%</div>
-              <div className={styles.statLabel}>שביעות רצון לקוחות</div>
-            </div>
-            <div className={styles.statCard}>
-              <div className={styles.statNumber}>15+</div>
-              <div className={styles.statLabel}>מומחים בצוות</div>
+            <div className={styles.stats}>
+              <div className={styles.stat}>
+                <div className={styles.statNumber}>9+</div>
+                <div className={styles.statLabel}>שנים</div>
+              </div>
+              <div className={styles.stat}>
+                <div className={styles.statNumber}>200+</div>
+                <div className={styles.statLabel}>אירועים</div>
+              </div>
+              <div className={styles.stat}>
+                <div className={styles.statNumber}>100%</div>
+                <div className={styles.statLabel}>מרוצים</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PHILOSOPHY SECTION */}
+      {/* PHILOSOPHY */}
       <section className={styles.philosophySection}>
-        <h2>במה אני מאמינה</h2>
-        <div className={styles.philosophyGrid}>
-          <div className={styles.philosophyCard}>
-            <div className={styles.philosophyIcon}>✨</div>
-            <h3>פרטים עושים הבדל</h3>
-            <p>כל צבע, כל זווית, כל שניה נחשבת. זה לא אני שמחליטה מה חשוב - אתה. ואני מוודאת שהכל מושלם.</p>
-          </div>
-          <div className={styles.philosophyCard}>
-            <div className={styles.philosophyIcon}>🤝</div>
-            <h3>שותפות, לא עבודה</h3>
-            <p>אני לא מפיקה שמקבלת brief וממלאה הזמנה. אני שותפה שלך בתהליך. קולך משנה הכל.</p>
-          </div>
-          <div className={styles.philosophyCard}>
-            <div className={styles.philosophyIcon}>💎</div>
-            <h3>איכות אבסולוטית</h3>
-            <p>אני עובדת רק עם הטובים ביותר. אם לא טוב מספיק, זה לא מוכן. זה לא על צניעות - זה על התחשבות בזמן שלך.</p>
-          </div>
-          <div className={styles.philosophyCard}>
-            <div className={styles.philosophyIcon}>🎯</div>
-            <h3>אחריות מלאה</h3>
-            <p>מהקונספט הראשון עד לרגע האחרון של האירוע - אני כאן. אתה מנוח. אני דואגת.</p>
+        <div className={styles.philosophyContainer}>
+          <h2>איך אני עובדת</h2>
+          
+          <div className={styles.philosophyGrid}>
+            <div className={styles.philosophyCard}>
+              <h3>פרטים קטנים עושים הבדל גדול</h3>
+              <p>
+                אני לא מדברת על צבע הנר. אני מדברת על העובדה שהוא כבה בשנייה שלוש כי הרוח הוא מעבודת היד של מישהו שלא בדק אם הוא עומד למהירות של מנוע.
+              </p>
+            </div>
+
+            <div className={styles.philosophyCard}>
+              <h3>אתה לא משום דבר אחר</h3>
+              <p>
+                כשאתה עם Skyline, אתה לא במערכת. אתה לא טיקט. אתה האדם שאני משקיעה בו כדי שהיום שלך יהיה ממש שלך.
+              </p>
+            </div>
+
+            <div className={styles.philosophyCard}>
+              <h3>איכות פירושה ביטול טוקנים</h3>
+              <p>
+                אני לא עובדת עם "יזם צעיר" בניהול שלום. אני עובדת עם מומחים. אנשים שיודעים את העבודה שלהם עד הקצה של העיניים.
+              </p>
+            </div>
+
+            <div className={styles.philosophyCard}>
+              <h3>כל הרגשות בדרך הבחזקה</h3>
+              <p>
+                אתה רחוק מהלוגיסטיקה. אתה מהנה. אני ממלאה את כל הריק בהוקיו שלי ובשנות הניסיון שלי.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* PODCASTS SECTION */}
+      {/* PODCASTS - NETFLIX STYLE */}
       <section className={styles.podcastSection}>
-        <h2>הפודקאסט שלי</h2>
-        <p className={styles.podcastIntro}>
-          משתף את הידע שצברתי בשנים. טיפים, סיפורים מהשטח, וחוכמה שרק שנים של ניסיון יכולים ללמד.
-        </p>
-        <div className={styles.podcastsGrid}>
-          <a href="https://www.youtube.com/@SkylineProductions" target="_blank" rel="noopener noreferrer" className={styles.podcastCard}>
-            <div className={styles.podcastIcon}>🎥</div>
-            <h3>YouTube</h3>
-            <p>סדרה של ווידאו על כל מה שצריך לדעת על אירועים</p>
-            <span className={styles.podcastLink}>עבור ל-YouTube →</span>
-          </a>
-          <a href="https://www.instagram.com/skyline.productions" target="_blank" rel="noopener noreferrer" className={styles.podcastCard}>
-            <div className={styles.podcastIcon}>📱</div>
-            <h3>Instagram</h3>
-            <p>תיעוד יומיומי מהשטח + טיפים ויומנים</p>
-            <span className={styles.podcastLink}>עבור ל-Instagram →</span>
-          </a>
+        <div className={styles.podcastContainer}>
+          <div className={styles.podcastHeader}>
+            <h2>הפודקאסט שלי</h2>
+            <p>
+              אנשים שואלים אותי הרבה על איך אני עושה מה שאני עושה. הפודקאסטים האלה הם התשובה.
+            </p>
+          </div>
+
+          <div className={styles.podcastGrid}>
+            {podcasts.map((podcast) => (
+              <div key={podcast.id} className={styles.podcastCard}>
+                <div className={styles.podcastVideoContainer}>
+                  <video
+                    src={podcast.url}
+                    className={styles.podcastVideo}
+                    controls
+                    controlsList="nodownload"
+                  />
+                </div>
+                <div className={styles.podcastInfo}>
+                  <h3>{podcast.title}</h3>
+                  <p className={styles.podcastDesc}>{podcast.description}</p>
+                  <span className={styles.duration}>{podcast.duration}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* WORK SECTION - FEATURED EVENTS */}
+      {/* WORK - אירועים בולטים */}
       <section className={styles.workSection}>
-        <h2>האירועים שעזבו רושם</h2>
-        <div className={styles.eventsGrid}>
-          <div className={styles.eventCard}>
-            <div className={styles.eventImage}>🎉</div>
-            <h3>Marry Land Festival 2024</h3>
-            <p>500+ אורחים, 50+ ספקים, פסטיבל חתונות ראשון מסוגו בישראל</p>
-            <div className={styles.eventStats}>
-              <span>500+ אורחים</span>
-              <span>תל אביב</span>
-              <span>מאי 2024</span>
+        <div className={styles.workContainer}>
+          <h2>אירועים שעזבו רושם</h2>
+
+          <div className={styles.eventsList}>
+            <div className={styles.eventItem}>
+              <h3>Marry Land Festival 2024</h3>
+              <p>
+                הראשון שלו מסוגו בישראל. 500 אנשים, 50 ספקים, יום שלם שלא היה שיגרה שנייה אחת. כל שנייה הייתה מתוכננת.
+              </p>
+              <div className={styles.eventMeta}>
+                <span>500 אורחים</span>
+                <span>תל אביב</span>
+                <span>מאי 2024</span>
+              </div>
+            </div>
+
+            <div className={styles.eventItem}>
+              <h3>Jungle Wedding</h3>
+              <p>
+                החתונה שבה הלקוחות אמרו "אנחנו רוצים משהו מטורף" ואני אמרתי "אני יודעת בדיוק מה". ג'ונגל בתוך העיר. שומים בעצים. אורות בחנוקות.
+              </p>
+              <div className={styles.eventMeta}>
+                <span>180 אורחים</span>
+                <span>הרצליה</span>
+                <span>יוני 2024</span>
+              </div>
+            </div>
+
+            <div className={styles.eventItem}>
+              <h3>All Black Metal Wedding</h3>
+              <p>
+                "האם אפשר חתונה בשחור מוחלט ועדיין להיות קלאסי?" כן, אם אתה יודע מה אתה עושה. כל ריהוט, כל אורות, כל גוון - שחור. וזה היה הדבר הכי יפה שראיתי.
+              </p>
+              <div className={styles.eventMeta}>
+                <span>150 אורחים</span>
+                <span>תל אביב</span>
+                <span>אוקטובר 2024</span>
+              </div>
             </div>
           </div>
-          <div className={styles.eventCard}>
-            <div className={styles.eventImage}>🌿</div>
-            <h3>Jungle Wedding</h3>
-            <p>חתונה בקונספט ג'ונגל אורבני ייחודי. כל פרט, כל גוון, מושלם.</p>
-            <div className={styles.eventStats}>
-              <span>180 אורחים</span>
-              <span>הרצליה</span>
-              <span>יוני 2024</span>
-            </div>
+
+          <div className={styles.workCta}>
+            <Link href="/portfolio">צפה בכל הקונספטים</Link>
           </div>
-          <div className={styles.eventCard}>
-            <div className={styles.eventImage}>⚫</div>
-            <h3>All Black Metal Wedding</h3>
-            <p>חתונה דרמטית בשחור מוחלט. אלטרנטיבי, בעז, וביוטיפול.</p>
-            <div className={styles.eventStats}>
-              <span>150 אורחים</span>
-              <span>תל אביב</span>
-              <span>אוקטובר 2024</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.ctaWrapper}>
-          <Link href="/portfolio" className={styles.ctaButton}>
-            צפו בכל הפרויקטים
-          </Link>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
       <section className={styles.testimonialsSection}>
-        <h2>מה הלקוחות אומרים</h2>
-        <div className={styles.testimonialsGrid}>
-          <div className={styles.testimonialCard}>
-            <p className={styles.testimonialText}>
-              "דנה עשתה לנו משהו שלא חשבנו שיהיה אפשרי. חתונה בטוטאל fantasy mode שהייתה 100% ביצוע מושלם."
-            </p>
-            <div className={styles.testimonialAuthor}>
-              <div className={styles.authorAvatar}>YD</div>
-              <div>
-                <p className={styles.authorName}>יעל ודניאל</p>
-                <p className={styles.authorRole}>Jungle Wedding 2024</p>
-              </div>
+        <div className={styles.testimonialsContainer}>
+          <h2>מה הם אומרים</h2>
+
+          <div className={styles.testimonialsList}>
+            <div className={styles.testimonialCard}>
+              <p>
+                "דנה היא לא פשוט מארגנת. היא מישהי שמבינה מה אתה בעצם רוצה אפילו לפני שאתה יודע את זה. החתונה היתה חלום."
+              </p>
+              <span>יעל ודניאל</span>
             </div>
-          </div>
-          <div className={styles.testimonialCard}>
-            <p className={styles.testimonialText}>
-              "הפסטיבל היה הדבר הכי מטורף שעברנו. דנה הייתה החתן, המרוץ, והנצחון בבת אחת."
-            </p>
-            <div className={styles.testimonialAuthor}>
-              <div className={styles.authorAvatar}>ML</div>
-              <div>
-                <p className={styles.authorName}>מארגני Marry Land</p>
-                <p className={styles.authorRole}>Festival 2024</p>
-              </div>
+
+            <div className={styles.testimonialCard}>
+              <p>
+                "עובדה שדנה יכלה לתאום 50 ספקים ועדיין לא הפסידה שום דבר. זה לא קרה. זה הופעת מופת."
+              </p>
+              <span>מארגני Marry Land</span>
             </div>
-          </div>
-          <div className={styles.testimonialCard}>
-            <p className={styles.testimonialText}>
-              "כשהציעו לנו את הקונספט All Black Metal - חשבנו שהם מטורפים. בסופו של דבר, זה היה המטורף ביותר."
-            </p>
-            <div className={styles.testimonialAuthor}>
-              <div className={styles.authorAvatar}>RS</div>
-              <div>
-                <p className={styles.authorName}>רועי ושירה</p>
-                <p className={styles.authorRole}>Metal Wedding 2024</p>
-              </div>
+
+            <div className={styles.testimonialCard}>
+              <p>
+                "אני חשבתי שחתונה בשחור תהיה דכאונית. דנה הוכיחה לי שזה יכול להיות רוקן. זה היה."
+              </p>
+              <span>רועי ושירה</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className={styles.finalCtaSection}>
-        <h2>אתה חלום פראי שצריך להיות מציאות?</h2>
-        <p>בואו נדבר. בואו נתכננן. בואו נעשה משהו שלא ראיתה בעיניים.</p>
-        <a href="mailto:info@skylineproductions.com" className={styles.finalCtaButton}>
-          תיאום פגישה
-        </a>
+      <section className={styles.finalSection}>
+        <div className={styles.finalContainer}>
+          <h2>יש לך חלום שאתה לא רוצה לרסק</h2>
+          <p>בואו נדבר. זה לא התחייבות. זה בדיקה של זה שנכנסים לאותה תדר.</p>
+          <a href="mailto:info@skylineproductions.com" className={styles.finalCta}>
+            תיאום פגישה
+          </a>
+        </div>
       </section>
     </div>
   );
