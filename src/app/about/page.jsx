@@ -46,62 +46,119 @@ export default function AboutPage() {
     podcasts: [
       {
         id: 1,
-        title: "פרק 1: 5 סימנים שהאולם עושה עליכם סיבוב",
-        description: "לפני שאתם סוגרים חוזה, תשמעו את 5 הדגלים האדומים",
-        videoUrl: "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_סימנים_שהאולם_kbqjzv.mp4",
-        youtubeId: "YOUTUBE_ID_1",
-        thumbnail: "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425656/5_סימנים_שהאולם_kbqjzv.jpg",
-        duration: "8:45",
-        views: "12.5K"
+        title: "מחיר לא סופי",
+        description: "למה חשוב להבין את המחיר האמיתי של ההפקה",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528916/%D7%9E%D7%97%D7%99%D7%A8_%D7%9C%D7%90_%D7%A1%D7%95%D7%A4%D7%99_te573k.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528916/%D7%9E%D7%97%D7%99%D7%A8_%D7%9C%D7%90_%D7%A1%D7%95%D7%A4%D7%99_te573k.jpg",
+        duration: "",
+        views: ""
       },
       {
         id: 2,
-        title: "פרק 2: פדיחת החופה - סיפור אמיתי",
-        description: "מה קורה כשהבד של החופה מגיע בצבע הלא נכון?",
-        videoUrl: "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4",
-        youtubeId: "YOUTUBE_ID_2",
-        thumbnail: "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425660/VID-20250916-WA0007_q8j5hk.jpg",
-        duration: "12:20",
-        views: "18.3K"
+        title: "בקרת איכות",
+        description: "איך אני מוודאת שהכל יהיה מושלם",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%91%D7%A7%D7%A8%D7%AA_%D7%90%D7%99%D7%9B%D7%95%D7%AA_glxlod.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%91%D7%A7%D7%A8%D7%AA_%D7%90%D7%99%D7%9B%D7%95%D7%AA_glxlod.jpg",
+        duration: "",
+        views: ""
       },
       {
         id: 3,
-        title: "פרק 3: All Black Metal - הקונספט שהפך ווירלי",
-        description: "איך יצרנו את הקונספט הכי נועז שעשינו אי פעם",
-        videoUrl: "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4",
-        youtubeId: "YOUTUBE_ID_3",
-        thumbnail: "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425663/VID-20250916-WA0002_rdm3vh.jpg",
-        duration: "18:15",
-        views: "25.7K"
+        title: "ניקיון - דבר ראשון",
+        description: "הפרט הקטן שעושה את כל ההבדל",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F_%D7%93%D7%91%D7%A8_%D7%A8%D7%90%D7%A9%D7%95%D7%9F_erd6zo.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528915/%D7%A0%D7%99%D7%A7%D7%99%D7%95%D7%9F_%D7%93%D7%91%D7%A8_%D7%A8%D7%90%D7%A9%D7%95%D7%9F_erd6zo.jpg",
+        duration: "",
+        views: ""
+      },
+      {
+        id: 4,
+        title: "לנהל את המנהל",
+        description: "איך מתמודדים עם ספקים קשים",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%9C%D7%A0%D7%94%D7%9C_%D7%90%D7%AA_%D7%94%D7%9E%D7%A0%D7%94%D7%9C_jo3sxf.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%9C%D7%A0%D7%94%D7%9C_%D7%90%D7%AA_%D7%94%D7%9E%D7%A0%D7%94%D7%9C_jo3sxf.jpg",
+        duration: "",
+        views: ""
+      },
+      {
+        id: 5,
+        title: "חתונה מאטל",
+        description: "הקונספט הכי מיוחד שעשינו השנה",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%AA%D7%95%D7%A0%D7%94_%D7%9E%D7%90%D7%98%D7%9C_xqtjnr.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%AA%D7%95%D7%A0%D7%94_%D7%9E%D7%90%D7%98%D7%9C_xqtjnr.jpg",
+        duration: "",
+        views: ""
+      },
+      {
+        id: 6,
+        title: "חוזה, מותנה, טעימות",
+        description: "מה חייבים לדעת לפני שחותמים",
+        videoUrl: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%95%D7%96%D7%94_%D7%9E%D7%95%D7%AA%D7%A0%D7%94_%D7%98%D7%A2%D7%99%D7%9E%D7%95%D7%AA_jjzy0r.mp4",
+        youtubeId: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/video/upload/v1764528914/%D7%97%D7%95%D7%96%D7%94_%D7%9E%D7%95%D7%AA%D7%A0%D7%94_%D7%98%D7%A2%D7%99%D7%9E%D7%95%D7%AA_jjzy0r.jpg",
+        duration: "",
+        views: ""
       }
     ],
     testimonials: [
       {
         id: 1,
-        clientName: "יעל ודניאל",
-        event: "חתונה - ג'ונגל אורבני",
-        quote: "דנה הפכה את החלום שלנו למציאות",
-        videoUrl: "URL_HERE",
-        thumbnail: "URL_HERE",
-        duration: "0:45"
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "שירות מעולה ומקצועי",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg",
+        duration: "המלצה"
       },
       {
         id: 2,
-        clientName: "משפחת כהן",
-        event: "חתונה",
-        quote: "ההפקה הייתה מושלמת מתחילה ועד סוף",
-        videoUrl: "URL_HERE",
-        thumbnail: "URL_HERE",
-        duration: "0:38"
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "תודה רבה על הכל!",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527613/Screenshot_20210729-040527_WhatsAppBusiness_cucy9d.jpg",
+        duration: "המלצה"
       },
       {
         id: 3,
-        clientName: "חברת Hi-Tech",
-        event: "אירוע עסקי",
-        quote: "הפקה ברמה עולמית",
-        videoUrl: "URL_HERE",
-        thumbnail: "URL_HERE",
-        duration: "0:52"
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "האירוע היה מושלם",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-190734_Samsung_Internet_gmvuxw.jpg",
+        duration: "המלצה"
+      },
+      {
+        id: 4,
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "ממליצים בחום!",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-172352_WhatsApp_ghkpef.jpg",
+        duration: "המלצה"
+      },
+      {
+        id: 5,
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "עבודה מקצועית ברמה הכי גבוהה",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527626/Screenshot_20210902-131503_WhatsApp_nvrky0.jpg",
+        duration: "המלצה"
+      },
+      {
+        id: 6,
+        clientName: "לקוח מרוצה",
+        event: "המלצה",
+        quote: "תודה על אירוע בלתי נשכח",
+        videoUrl: "",
+        thumbnail: "https://res.cloudinary.com/daez7e9nj/image/upload/v1764527604/Screenshot_20210621-205506_WhatsAppBusiness_d9jmor.jpg",
+        duration: "המלצה"
       }
     ]
   };
@@ -270,7 +327,7 @@ export default function AboutPage() {
             </a>
             
             <a 
-              href="https://instagram.com/skyline.productions" 
+              href="https://www.instagram.com/danaisraeli2" 
               target="_blank"
               rel="noopener noreferrer"
               className={styles.instagramCTA}
