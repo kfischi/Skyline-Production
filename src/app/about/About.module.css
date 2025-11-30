@@ -3,7 +3,7 @@
   background: var(--color-primary);
 }
 
-/* ===== HERO - תמונה בלבד ===== */
+/* ===== HERO ===== */
 .heroSection {
   position: relative;
   width: 100%;
@@ -40,16 +40,30 @@
   margin: 0 auto;
 }
 
-.aboutText h1 {
+.aboutContainer h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4.5rem;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 40px;
-  line-height: 1;
+  margin-bottom: 30px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
-.aboutText p {
+.tagline {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-accent);
+  margin-bottom: 50px;
+  line-height: 1.4;
+}
+
+.story {
+  margin-bottom: 60px;
+}
+
+.story p {
   font-family: 'Assistant', sans-serif;
   font-size: 1.05rem;
   line-height: 1.85;
@@ -57,25 +71,10 @@
   margin-bottom: 25px;
 }
 
-.aboutText p:first-of-type {
-  font-size: 1.15rem;
-}
-
-.emphasis {
-  font-size: 1.3rem !important;
-  font-weight: 600 !important;
-  color: var(--color-accent) !important;
-  margin: 40px 0 !important;
-  padding: 20px 0 !important;
-  border-top: 2px solid var(--color-divider);
-  border-bottom: 2px solid var(--color-divider);
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-top: 60px;
   padding-top: 40px;
   border-top: 1px solid var(--color-divider);
 }
@@ -100,7 +99,7 @@
   letter-spacing: 1px;
 }
 
-/* ===== PHILOSOPHY SECTION ===== */
+/* ===== PHILOSOPHY ===== */
 .philosophySection {
   padding: 100px 40px;
   background: linear-gradient(to bottom, var(--color-secondary) 0%, var(--color-primary) 100%);
@@ -115,13 +114,22 @@
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: var(--color-text-dark);
-  margin-bottom: 60px;
+  margin-bottom: 12px;
   text-align: center;
+}
+
+.philosophySubtitle {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: 60px;
+  font-style: italic;
 }
 
 .philosophyGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
 }
 
@@ -131,18 +139,16 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(44, 40, 38, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid transparent;
 }
 
 .philosophyCard:hover {
   transform: translateY(-12px);
   box-shadow: 0 16px 32px rgba(196, 165, 114, 0.2);
-  border-color: var(--color-accent);
 }
 
 .philosophyCard h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   color: var(--color-text-dark);
   margin-bottom: 16px;
   line-height: 1.3;
@@ -155,7 +161,7 @@
   color: var(--color-text-muted);
 }
 
-/* ===== PODCAST SECTION - NETFLIX STYLE ===== */
+/* ===== PODCAST ===== */
 .podcastSection {
   padding: 100px 40px;
   background: var(--color-primary);
@@ -172,14 +178,14 @@
 
 .podcastHeader h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: var(--color-text-dark);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .podcastHeader p {
   font-family: 'Assistant', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--color-text-muted);
   max-width: 600px;
   line-height: 1.7;
@@ -197,13 +203,11 @@
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(44, 40, 38, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid var(--color-divider);
 }
 
 .podcastCard:hover {
-  transform: translateY(-16px) scale(1.02);
+  transform: translateY(-16px);
   box-shadow: 0 20px 40px rgba(196, 165, 114, 0.2);
-  border-color: var(--color-accent);
 }
 
 .podcastVideoContainer {
@@ -220,22 +224,13 @@
   object-fit: cover;
 }
 
-.podcastVideo::-webkit-media-controls-panel {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.podcastVideo::-webkit-media-controls-play-button {
-  background: var(--color-accent);
-  border-radius: 50%;
-}
-
 .podcastInfo {
   padding: 28px;
 }
 
 .podcastInfo h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--color-text-dark);
   margin-bottom: 12px;
   line-height: 1.3;
@@ -258,18 +253,18 @@
   letter-spacing: 0.5px;
 }
 
-/* ===== WORK SECTION ===== */
-.workSection {
+/* ===== EVENTS ===== */
+.eventsSection {
   padding: 100px 40px;
   background: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-secondary) 100%);
 }
 
-.workContainer {
+.eventsContainer {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.workContainer h2 {
+.eventsContainer h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: var(--color-text-dark);
@@ -300,7 +295,7 @@
 
 .eventItem h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   color: var(--color-text-dark);
   margin-bottom: 16px;
 }
@@ -316,6 +311,7 @@
 .eventMeta {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
   font-family: 'Assistant', sans-serif;
   font-size: 0.9rem;
   color: var(--color-accent);
@@ -327,11 +323,11 @@
   border-radius: 20px;
 }
 
-.workCta {
+.eventsCta {
   text-align: center;
 }
 
-.workCta a {
+.eventsCta a {
   display: inline-block;
   padding: 16px 40px;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
@@ -345,7 +341,7 @@
   box-shadow: 0 8px 24px rgba(196, 165, 114, 0.3);
 }
 
-.workCta a:hover {
+.eventsCta a:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(196, 165, 114, 0.4);
 }
@@ -395,7 +391,6 @@
   line-height: 1.75;
   color: var(--color-text-dark);
   margin-bottom: 20px;
-  font-style: italic;
 }
 
 .testimonialCard span {
@@ -405,7 +400,7 @@
   color: var(--color-accent);
 }
 
-/* ===== FINAL SECTION ===== */
+/* ===== FINAL ===== */
 .finalSection {
   padding: 120px 40px;
   background: linear-gradient(135deg, rgba(196, 165, 114, 0.08) 0%, rgba(196, 165, 114, 0.04) 100%);
@@ -458,12 +453,12 @@
     height: 80vh;
   }
 
-  .aboutText h1 {
+  .aboutContainer h1 {
     font-size: 3.5rem;
   }
 
   .philosophyContainer h2,
-  .workContainer h2,
+  .eventsContainer h2,
   .podcastHeader h2,
   .testimonialsContainer h2 {
     font-size: 2.5rem;
@@ -471,6 +466,10 @@
 
   .podcastGrid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -482,23 +481,24 @@
   .aboutSection,
   .philosophySection,
   .podcastSection,
-  .workSection,
+  .eventsSection,
   .testimonialsSection,
   .finalSection {
     padding: 60px 20px;
   }
 
-  .aboutText h1 {
+  .aboutContainer h1 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
     margin-bottom: 30px;
   }
 
-  .aboutText p {
+  .story p {
     font-size: 1rem;
-  }
-
-  .emphasis {
-    font-size: 1.15rem !important;
   }
 
   .stats {
@@ -514,11 +514,10 @@
     grid-template-columns: 1fr;
   }
 
-  .podcastHeader h2,
   .philosophyContainer h2,
-  .workContainer h2,
-  .testimonialsContainer h2,
-  .finalContainer h2 {
+  .eventsContainer h2,
+  .podcastHeader h2,
+  .testimonialsContainer h2 {
     font-size: 2rem;
   }
 
@@ -526,29 +525,18 @@
     gap: 30px;
   }
 
-  .eventItem {
-    padding: 25px;
-  }
-
-  .philosophyCard {
-    padding: 25px;
-  }
-
-  .podcastInfo {
-    padding: 20px;
-  }
-
-  .testimonialsList {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonialCard,
-  .eventItem {
+  .eventItem,
+  .philosophyCard,
+  .testimonialCard {
     padding: 25px;
   }
 
   .finalContainer h2 {
     font-size: 1.8rem;
+  }
+
+  .finalContainer p {
+    font-size: 1rem;
   }
 }
 
@@ -560,28 +548,28 @@
   .aboutSection,
   .philosophySection,
   .podcastSection,
-  .workSection,
+  .eventsSection,
   .testimonialsSection,
   .finalSection {
     padding: 40px 16px;
   }
 
-  .aboutText h1 {
+  .aboutContainer h1 {
     font-size: 2rem;
   }
 
-  .aboutText p {
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  .story p {
     font-size: 0.95rem;
   }
 
-  .workCta a,
+  .eventsCta a,
   .finalCta {
     padding: 14px 30px;
     font-size: 0.9rem;
-  }
-
-  .eventMeta {
-    flex-wrap: wrap;
   }
 
   .stats {
@@ -590,5 +578,21 @@
 
   .statNumber {
     font-size: 2.2rem;
+  }
+
+  .podcastGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophyCard,
+  .eventItem,
+  .testimonialCard {
+    padding: 20px;
+  }
+
+  .eventItem h3,
+  .philosophyCard h3,
+  .podcastInfo h3 {
+    font-size: 1.2rem;
   }
 }
