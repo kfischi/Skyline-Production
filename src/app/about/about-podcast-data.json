@@ -1,0 +1,227 @@
+{
+  "about": {
+    "hero": {
+      "title": "היי, אני דנה ישראלי",
+      "subtitle": "ובעשור האחרון הפכתי חזונות למציאות",
+      "description": "מפיקה, אמנית קונספט, ובעיקר - השותפה שלכם ליצירת אירועים בלתי נשכחים",
+      "heroImage": "https://res.cloudinary.com/daez7e9nj/image/upload/v1764513457/%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98_yskgrw.png",
+      "ctaText": "תראו איך אני עושה את זה",
+      "ctaVideoUrl": "https://www.youtube.com/embed/FEATURED_VIDEO_ID"
+    },
+    
+    "story": {
+      "title": "הסיפור שלי",
+      "paragraphs": [
+        "הכל התחיל ב-2015. לא מתוכנית, אלא מאהבה טהורה ליופי, לפרטים, וליכולת להפוך רגע אחד לזיכרון של פעם בחיים. התחלתי קטן - חתונה אחת, אירוע אחד - וגיליתי שזה בדיוק מה שאני אמורה לעשות.",
+        "מה שמייחד את Skyline זה לא רק הניסיון או הספקים (למרות ששני אלה קריטיים). זה הגישה. אני לא רק מפיקה אירועים - אני שותפה בתהליך. מהרגע שאתם חותמים איתי ועד שהאורח האחרון עוזב, אני כאן. ממש.",
+        "היום, אחרי מאות אירועים, עשרות זוגות מאושרים ואינספור קונספטים שהפכו לוויראליים - אני עדיין מתרגשת מכל פרויקט חדש. כי בסוף, זה לא עבודה. זה אומנות."
+      ],
+      "image": "https://res.cloudinary.com/daez7e9nj/image/upload/v1764513457/%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98_yskgrw.png",
+      "signature": "דנה ישראלי, מייסדת Skyline Productions"
+    },
+
+    "timeline": [
+      {
+        "year": "2015",
+        "title": "ההתחלה",
+        "description": "הכל התחיל מאהבה ליצירה ולפרטים הקטנים",
+        "icon": "✨"
+      },
+      {
+        "year": "2018",
+        "title": "הקמת Skyline",
+        "description": "הקמתי את Skyline Productions עם חזון ברור",
+        "icon": "🚀"
+      },
+      {
+        "year": "2022",
+        "title": "פריצת דרך",
+        "description": "פסטיבל Marry Land - האירוע שהכל השתנה",
+        "icon": "🎉"
+      },
+      {
+        "year": "2024",
+        "title": "היום",
+        "description": "200+ אירועים, רשת ספקים מובילה, ומוניטין בינלאומי",
+        "icon": "💎"
+      }
+    ],
+
+    "stats": [
+      {
+        "number": "200+",
+        "label": "אירועים מוצלחים",
+        "icon": "🎊"
+      },
+      {
+        "number": "9+",
+        "label": "שנות ניסיון",
+        "icon": "⏰"
+      },
+      {
+        "number": "100%",
+        "label": "שביעות רצון לקוחות",
+        "icon": "⭐"
+      },
+      {
+        "number": "50K+",
+        "label": "צופים ביוטיוב",
+        "icon": "📺"
+      }
+    ],
+
+    "values": [
+      {
+        "icon": "✨",
+        "title": "תשומת לב לפרטים",
+        "description": "כל פרט קטן חשוב. אני דואגת שהכל יהיה מושלם מהרגע הראשון ועד האחרון."
+      },
+      {
+        "icon": "🤝",
+        "title": "שותפות אמיתית",
+        "description": "אני לא רק מפיקה - אני השותפה שלכם בתהליך. הצלחה שלכם היא הצלחה שלי."
+      },
+      {
+        "icon": "💎",
+        "title": "איכות ללא פשרות",
+        "description": "אני עובדת רק עם הספקים הטובים ביותר ובודקת הכל פעמיים. בלי קיצורי דרך."
+      },
+      {
+        "icon": "🎨",
+        "title": "יצירתיות",
+        "description": "כל אירוע הוא הזדמנות ליצור משהו ייחודי. אני לא עושה copy-paste."
+      }
+    ]
+  },
+
+  "podcast": {
+    "title": "הפודקאסט שלי",
+    "description": "סיפורים מהשטח, טיפים מקצועיים, ותובנות שלא תמצאו בשום מקום אחר",
+    "featuredEpisodes": [
+      {
+        "id": 1,
+        "title": "פרק 1: 5 סימנים שהאולם עושה עליכם סיבוב",
+        "description": "לפני שאתם סוגרים חוזה, תשמעו את 5 הדגלים האדומים שכל זוג חייב לדעת",
+        "videoUrl": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_סימנים_שהאולם_kbqjzv.mp4",
+        "youtubeId": "YOUTUBE_VIDEO_ID_1",
+        "thumbnail": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425656/5_סימנים_שהאולם_kbqjzv.jpg",
+        "duration": "8:45",
+        "views": "12.5K",
+        "publishedDate": "2025-01-15"
+      },
+      {
+        "id": 2,
+        "title": "פרק 2: פדיחת החופה - סיפור אמיתי",
+        "description": "מה קורה כשהבד של החופה מגיע בצבע הלא נכון? הסיפור המלא + איך פתרנו",
+        "videoUrl": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4",
+        "youtubeId": "YOUTUBE_VIDEO_ID_2",
+        "thumbnail": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425660/VID-20250916-WA0007_q8j5hk.jpg",
+        "duration": "12:20",
+        "views": "18.3K",
+        "publishedDate": "2025-01-22"
+      },
+      {
+        "id": 3,
+        "title": "פרק 3: All Black Metal - הקונספט שהפך ווירלי",
+        "description": "איך יצרנו את הקונספט הכי נועז שעשינו אי פעם, והפכנו אותו לסנסציה",
+        "videoUrl": "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4",
+        "youtubeId": "YOUTUBE_VIDEO_ID_3",
+        "thumbnail": "https://res.cloudinary.com/dptyfvwyo/image/upload/c_fill,w_800,h_450/v1715425663/VID-20250916-WA0002_rdm3vh.jpg",
+        "duration": "18:15",
+        "views": "25.7K",
+        "publishedDate": "2025-01-29"
+      }
+    ],
+    "youtubeChannel": "https://youtube.com/@skylineproductions",
+    "instagramHandle": "@skyline.productions"
+  },
+
+  "testimonials": {
+    "title": "מה אומרים עלי",
+    "videoTestimonials": [
+      {
+        "id": 1,
+        "clientName": "יעל ודניאל",
+        "event": "חתונה - ג'ונגל אורבני",
+        "videoUrl": "URL_TESTIMONIAL_VIDEO_1",
+        "youtubeId": "YOUTUBE_TESTIMONIAL_1",
+        "thumbnail": "URL_THUMB_1",
+        "quote": "דנה הפכה את החלום שלנו למציאות",
+        "duration": "0:45"
+      },
+      {
+        "id": 2,
+        "clientName": "משפחת כהן",
+        "event": "חתונה",
+        "videoUrl": "URL_TESTIMONIAL_VIDEO_2",
+        "youtubeId": "YOUTUBE_TESTIMONIAL_2",
+        "thumbnail": "URL_THUMB_2",
+        "quote": "ההפקה הייתה מושלמת מתחילה ועד סוף",
+        "duration": "0:38"
+      },
+      {
+        "id": 3,
+        "clientName": "חברת Hi-Tech",
+        "event": "אירוע עסקי",
+        "videoUrl": "URL_TESTIMONIAL_VIDEO_3",
+        "youtubeId": "YOUTUBE_TESTIMONIAL_3",
+        "thumbnail": "URL_THUMB_3",
+        "quote": "הפקה ברמה עולמית",
+        "duration": "0:52"
+      }
+    ]
+  },
+
+  "newsletter": {
+    "title": "רוצים עוד תוכן?",
+    "description": "הצטרפו ל-5,000+ אנשים שמקבלים טיפים, סיפורים ופרקים חדשים ישירות למייל",
+    "benefits": [
+      "פרק חדש כל שבוע",
+      "טיפים בלעדיים",
+      "מבצעים ומחירים מיוחדים",
+      "גישה מוקדמת לתוכן חדש"
+    ],
+    "placeholder": "האימייל שלכם",
+    "buttonText": "הצטרפו עכשיו",
+    "privacyNote": "לא נשלח ספאם. ניתן להסיר את עצמכם בכל עת."
+  },
+
+  "social": {
+    "instagram": {
+      "handle": "@skyline.productions",
+      "followers": "15.2K",
+      "posts": 450,
+      "feedTitle": "עקבו אחרי באינסטגרם"
+    },
+    "youtube": {
+      "channel": "Skyline Productions",
+      "subscribers": "8.5K",
+      "videos": 65,
+      "ctaText": "צפו בכל הפרקים"
+    },
+    "tiktok": {
+      "handle": "@skylineproductions",
+      "followers": "23K",
+      "ctaText": "טיפים קצרים בטיקטוק"
+    }
+  },
+
+  "cta": {
+    "title": "מוכנים ליצור משהו מדהים יחד?",
+    "description": "בואו נדבר על האירוע שלכם. פגישת קונספט ראשונה ללא התחייבות.",
+    "primaryButton": {
+      "text": "בואו נדבר",
+      "link": "mailto:info@skylineproductions.com"
+    },
+    "secondaryButton": {
+      "text": "צפו בעוד סרטונים",
+      "link": "https://youtube.com/@skylineproductions"
+    }
+  },
+
+  "seo": {
+    "title": "אודות דנה ישראלי | Skyline Productions",
+    "description": "הכירו את דנה ישראלי, מפיקת האירועים שהפכה מאות חזונות למציאות. 200+ אירועים, 9+ שנים, 100% שביעות רצון. צפו בפודקאסט ובסיפורים מהשטח.",
+    "keywords": "דנה ישראלי, הפקת אירועים, Skyline Productions, מפיקת אירועים, פודקאסט אירועים, חתונות יוקרה"
+  }
+}
