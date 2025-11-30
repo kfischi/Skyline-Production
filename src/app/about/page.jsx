@@ -42,7 +42,7 @@ export default function AboutPage() {
             <p className={styles.paragraph}>
               התוצאה? 200+ אירועים שהפכו לסטורים. 100% של הלקוחות שלי שוב לקחו עמי. 15+ אנשים שעובדים לצד לצד כדי שכל פרט יהיה מושלם.
             </p>
-            <p className={styles.paragraph highlight}>
+            <p className={`${styles.paragraph} ${styles.highlight}`}>
               זה לא רק עבודה. זה מיסיון.
             </p>
           </div>
