@@ -163,51 +163,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* EVENTS */}
-      <section className={styles.eventsSection}>
-        <div className={styles.eventsContainer}>
-          <h2>אירועים שעזבו רושם</h2>
-
-          <div className={styles.eventsList}>
-            <div className={styles.eventItem}>
-              <h3>Marry Land Festival 2024</h3>
-              <p>
-                הראשון שלו מסוגו בישראל. 500 אנשים, 50 ספקים, יום שלם שלא היה שיגרה שנייה אחת. כל שנייה הייתה מתוכננת.
-              </p>
-              <div className={styles.eventMeta}>
-                <span>500 אורחים</span>
-                <span>תל אביב</span>
-                <span>מאי 2024</span>
-              </div>
-            </div>
-
-            <div className={styles.eventItem}>
-              <h3>Jungle Wedding</h3>
-              <p>
-                החתונה שבה הלקוחות אמרו "אנחנו רוצים משהו מטורף" ואני אמרתי "אני יודעת בדיוק מה". ג'ונגל בתוך העיר. שומים בעצים. אורות בחנוקות.
-              </p>
-              <div className={styles.eventMeta}>
-                <span>180 אורחים</span>
-                <span>הרצליה</span>
-                <span>יוני 2024</span>
-              </div>
-            </div>
-
-            <div className={styles.eventItem}>
-              <h3>All Black Metal Wedding</h3>
-              <p>
-                "האם אפשר חתונה בשחור מוחלט ועדיין להיות קלאסי?" כן, אם אתה יודע מה אתה עושה. כל ריהוט, כל אורות, כל גוון - שחור. וזה היה הדבר הכי יפה שראיתי.
-              </p>
-              <div className={styles.eventMeta}>
-                <span>150 אורחים</span>
-                <span>תל אביב</span>
-                <span>אוקטובר 2024</span>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.eventsCta}>
-            <Link href="/portfolio">צפה בכל הקונספטים</Link>
+      {/* PODCAST LINKS */}
+      <section className={styles.podcastLinksSection}>
+        <div className={styles.podcastLinksContainer}>
+          <h3>רוצים עוד?</h3>
+          <p>כל הפרקים זמינים ב-YouTube ו-Instagram</p>
+          
+          <div className={styles.linksGrid}>
+            <a 
+              href="https://www.youtube.com/@SkylineProductions" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.linkCard}
+            >
+              <span className={styles.linkIcon}>▶</span>
+              <span className={styles.linkText}>YouTube</span>
+            </a>
+            <a 
+              href="https://www.instagram.com/skyline.productions" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.linkCard}
+            >
+              <span className={styles.linkIcon}>📱</span>
+              <span className={styles.linkText}>Instagram</span>
+            </a>
           </div>
         </div>
       </section>
