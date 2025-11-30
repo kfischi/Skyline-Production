@@ -1,27 +1,15 @@
 .container {
   width: 100%;
   background: var(--color-primary);
-  overflow: hidden;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO - תמונה בלבד ===== */
 .heroSection {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 700px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   overflow: hidden;
-}
-
-.heroBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  background: #000;
 }
 
 .heroImage {
@@ -33,66 +21,12 @@
 
 .heroOverlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(0, 0, 0, 0.3) 70%,
-    transparent 100%
-  );
-}
-
-.heroContent {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  color: white;
-  max-width: 1000px;
-  padding: 0 40px 100px;
-  animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.heroTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 5rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-  line-height: 1.1;
-}
-
-.heroSubtitle {
-  font-family: 'Assistant', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color: var(--color-accent);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-}
-
-.heroDescription {
-  font-family: 'Assistant', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 300;
-  max-width: 600px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+  pointer-events: none;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -101,63 +35,58 @@
   background: var(--color-primary);
 }
 
-.aboutWrapper {
-  max-width: 1200px;
+.aboutContainer {
+  max-width: 900px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
 }
 
-.aboutContent h2 {
+.aboutText h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 30px;
-  line-height: 1.2;
+  margin-bottom: 40px;
+  line-height: 1;
 }
 
-.paragraph {
+.aboutText p {
   font-family: 'Assistant', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   color: var(--color-text-dark);
   margin-bottom: 25px;
 }
 
-.paragraph.highlight {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  margin-top: 40px;
-  padding: 20px;
-  border-left: 4px solid var(--color-accent);
+.aboutText p:first-of-type {
+  font-size: 1.15rem;
 }
 
-.statsGrid {
+.emphasis {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  color: var(--color-accent) !important;
+  margin: 40px 0 !important;
+  padding: 20px 0 !important;
+  border-top: 2px solid var(--color-divider);
+  border-bottom: 2px solid var(--color-divider);
+}
+
+.stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-divider);
 }
 
-.statCard {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
+.stat {
   text-align: center;
-  box-shadow: 0 8px 24px rgba(44, 40, 38, 0.1);
-  transition: all 0.3s ease;
-}
-
-.statCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 36px rgba(196, 165, 114, 0.2);
 }
 
 .statNumber {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--color-accent);
   margin-bottom: 8px;
@@ -165,9 +94,10 @@
 
 .statLabel {
   font-family: 'Assistant', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--color-text-muted);
-  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* ===== PHILOSOPHY SECTION ===== */
@@ -176,137 +106,156 @@
   background: linear-gradient(to bottom, var(--color-secondary) 0%, var(--color-primary) 100%);
 }
 
-.philosophySection h2 {
+.philosophyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.philosophyContainer h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  text-align: center;
+  font-size: 3rem;
   color: var(--color-text-dark);
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .philosophyGrid {
-  max-width: 1200px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
 }
 
 .philosophyCard {
   background: white;
   padding: 40px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 8px 24px rgba(44, 40, 38, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(44, 40, 38, 0.08);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid transparent;
 }
 
 .philosophyCard:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(196, 165, 114, 0.25);
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgba(196, 165, 114, 0.2);
   border-color: var(--color-accent);
-}
-
-.philosophyIcon {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
 }
 
 .philosophyCard h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  line-height: 1.3;
 }
 
 .philosophyCard p {
   font-family: 'Assistant', sans-serif;
   font-size: 0.95rem;
+  line-height: 1.75;
   color: var(--color-text-muted);
-  line-height: 1.7;
 }
 
-/* ===== PODCAST SECTION ===== */
+/* ===== PODCAST SECTION - NETFLIX STYLE ===== */
 .podcastSection {
   padding: 100px 40px;
   background: var(--color-primary);
 }
 
-.podcastSection h2 {
+.podcastContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.podcastHeader {
+  margin-bottom: 80px;
+}
+
+.podcastHeader h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
-  text-align: center;
   color: var(--color-text-dark);
   margin-bottom: 20px;
 }
 
-.podcastIntro {
+.podcastHeader p {
   font-family: 'Assistant', sans-serif;
   font-size: 1.1rem;
-  text-align: center;
   color: var(--color-text-muted);
   max-width: 600px;
-  margin: 0 auto 50px;
   line-height: 1.7;
 }
 
-.podcastsGrid {
-  max-width: 1200px;
-  margin: 0 auto;
+.podcastGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 40px;
 }
 
 .podcastCard {
-  background: linear-gradient(135deg, rgba(196, 165, 114, 0.1) 0%, rgba(196, 165, 114, 0.05) 100%);
-  padding: 40px;
+  background: white;
   border-radius: 16px;
-  border: 2px solid var(--color-accent);
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(44, 40, 38, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-divider);
 }
 
 .podcastCard:hover {
-  transform: translateY(-15px);
-  background: linear-gradient(135deg, rgba(196, 165, 114, 0.2) 0%, rgba(196, 165, 114, 0.1) 100%);
-  box-shadow: 0 20px 50px rgba(196, 165, 114, 0.3);
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(196, 165, 114, 0.2);
+  border-color: var(--color-accent);
 }
 
-.podcastIcon {
-  font-size: 4rem;
-  margin-bottom: 20px;
+.podcastVideoContainer {
+  position: relative;
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
-.podcastCard h3 {
+.podcastVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.podcastVideo::-webkit-media-controls-panel {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.podcastVideo::-webkit-media-controls-play-button {
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.podcastInfo {
+  padding: 28px;
+}
+
+.podcastInfo h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--color-text-dark);
   margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.podcastCard p {
+.podcastDesc {
   font-family: 'Assistant', sans-serif;
   font-size: 0.95rem;
   color: var(--color-text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1.6;
 }
 
-.podcastLink {
+.duration {
   font-family: 'Assistant', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.85rem;
   color: var(--color-accent);
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.podcastCard:hover .podcastLink {
-  transform: translateX(-5px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* ===== WORK SECTION ===== */
@@ -315,77 +264,74 @@
   background: linear-gradient(to bottom, var(--color-primary) 0%, var(--color-secondary) 100%);
 }
 
-.workSection h2 {
+.workContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.workContainer h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  text-align: center;
+  font-size: 3rem;
   color: var(--color-text-dark);
   margin-bottom: 60px;
+  text-align: center;
 }
 
-.eventsGrid {
-  max-width: 1200px;
-  margin: 0 auto 50px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 50px;
 }
 
-.eventCard {
-  background: white;
+.eventItem {
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(44, 40, 38, 0.1);
-  transition: all 0.4s ease;
-  border-top: 4px solid var(--color-accent);
+  background: white;
+  border-radius: 12px;
+  border-left: 4px solid var(--color-accent);
+  box-shadow: 0 4px 16px rgba(44, 40, 38, 0.08);
+  transition: all 0.3s ease;
 }
 
-.eventCard:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 16px 40px rgba(196, 165, 114, 0.2);
+.eventItem:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 24px rgba(196, 165, 114, 0.15);
 }
 
-.eventImage {
-  font-size: 3.5rem;
-  margin-bottom: 15px;
-}
-
-.eventCard h3 {
+.eventItem h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-.eventCard p {
+.eventItem p {
   font-family: 'Assistant', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.75;
   color: var(--color-text-muted);
   margin-bottom: 20px;
-  line-height: 1.6;
 }
 
-.eventStats {
+.eventMeta {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 20px;
   font-family: 'Assistant', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--color-accent);
 }
 
-.eventStats span {
+.eventMeta span {
   background: rgba(196, 165, 114, 0.1);
   padding: 6px 12px;
   border-radius: 20px;
 }
 
-.ctaWrapper {
+.workCta {
   text-align: center;
-  margin-top: 50px;
 }
 
-.ctaButton {
+.workCta a {
   display: inline-block;
   padding: 16px 40px;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
@@ -399,28 +345,31 @@
   box-shadow: 0 8px 24px rgba(196, 165, 114, 0.3);
 }
 
-.ctaButton:hover {
+.workCta a:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(196, 165, 114, 0.4);
 }
 
-/* ===== TESTIMONIALS SECTION ===== */
+/* ===== TESTIMONIALS ===== */
 .testimonialsSection {
   padding: 100px 40px;
   background: var(--color-primary);
 }
 
-.testimonialsSection h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  text-align: center;
-  color: var(--color-text-dark);
-  margin-bottom: 60px;
+.testimonialsContainer {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.testimonialsGrid {
-  max-width: 1200px;
-  margin: 0 auto;
+.testimonialsContainer h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--color-text-dark);
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.testimonialsList {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -429,87 +378,62 @@
 .testimonialCard {
   background: white;
   padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(44, 40, 38, 0.08);
-  transition: all 0.3s ease;
+  border-radius: 12px;
   border-left: 4px solid var(--color-accent);
+  box-shadow: 0 4px 16px rgba(44, 40, 38, 0.08);
+  transition: all 0.3s ease;
 }
 
 .testimonialCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 36px rgba(196, 165, 114, 0.2);
+  box-shadow: 0 12px 28px rgba(196, 165, 114, 0.15);
 }
 
-.testimonialText {
+.testimonialCard p {
   font-family: 'Assistant', sans-serif;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: var(--color-text-dark);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   font-style: italic;
 }
 
-.testimonialAuthor {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.authorAvatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.authorName {
+.testimonialCard span {
   font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-text-dark);
-  margin: 0;
-  font-size: 0.95rem;
+  color: var(--color-accent);
 }
 
-.authorRole {
-  font-family: 'Assistant', sans-serif;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin: 4px 0 0 0;
+/* ===== FINAL SECTION ===== */
+.finalSection {
+  padding: 120px 40px;
+  background: linear-gradient(135deg, rgba(196, 165, 114, 0.08) 0%, rgba(196, 165, 114, 0.04) 100%);
 }
 
-/* ===== FINAL CTA SECTION ===== */
-.finalCtaSection {
-  padding: 100px 40px;
-  background: linear-gradient(135deg, rgba(196, 165, 114, 0.15) 0%, rgba(196, 165, 114, 0.05) 100%);
+.finalContainer {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.finalCtaSection h2 {
+.finalContainer h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   color: var(--color-text-dark);
   margin-bottom: 20px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.2;
 }
 
-.finalCtaSection p {
+.finalContainer p {
   font-family: 'Assistant', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--color-text-muted);
-  max-width: 600px;
-  margin: 0 auto 40px;
-  line-height: 1.6;
+  margin-bottom: 40px;
+  line-height: 1.7;
 }
 
-.finalCtaButton {
+.finalCta {
   display: inline-block;
   padding: 18px 50px;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
@@ -517,53 +441,42 @@
   border-radius: 8px;
   font-family: 'Assistant', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(196, 165, 114, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 32px rgba(196, 165, 114, 0.3);
 }
 
-.finalCtaButton:hover {
+.finalCta:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(196, 165, 114, 0.5);
+  box-shadow: 0 16px 40px rgba(196, 165, 114, 0.4);
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .aboutWrapper {
-    grid-template-columns: 1fr;
-    gap: 50px;
+  .heroSection {
+    height: 80vh;
   }
 
-  .statsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .heroTitle {
+  .aboutText h1 {
     font-size: 3.5rem;
   }
 
-  .philosophySection h2,
-  .workSection h2,
-  .podcastSection h2,
-  .testimonialsSection h2,
-  .finalCtaSection h2 {
-    font-size: 2.8rem;
+  .philosophyContainer h2,
+  .workContainer h2,
+  .podcastHeader h2,
+  .testimonialsContainer h2 {
+    font-size: 2.5rem;
+  }
+
+  .podcastGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    height: 80vh;
-    min-height: 500px;
-  }
-
-  .heroTitle {
-    font-size: 2.5rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1.3rem;
+    height: 70vh;
   }
 
   .aboutSection,
@@ -571,53 +484,77 @@
   .podcastSection,
   .workSection,
   .testimonialsSection,
-  .finalCtaSection {
+  .finalSection {
     padding: 60px 20px;
   }
 
-  .aboutContent h2,
-  .philosophySection h2,
-  .workSection h2,
-  .podcastSection h2,
-  .testimonialsSection h2 {
+  .aboutText h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .aboutText p {
+    font-size: 1rem;
+  }
+
+  .emphasis {
+    font-size: 1.15rem !important;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .philosophyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .podcastGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .podcastHeader h2,
+  .philosophyContainer h2,
+  .workContainer h2,
+  .testimonialsContainer h2,
+  .finalContainer h2 {
     font-size: 2rem;
   }
 
-  .statsGrid {
+  .eventsList {
+    gap: 30px;
+  }
+
+  .eventItem {
+    padding: 25px;
+  }
+
+  .philosophyCard {
+    padding: 25px;
+  }
+
+  .podcastInfo {
+    padding: 20px;
+  }
+
+  .testimonialsList {
     grid-template-columns: 1fr;
   }
 
-  .philosophyGrid,
-  .eventsGrid,
-  .testimonialsGrid,
-  .podcastsGrid {
-    grid-template-columns: 1fr;
+  .testimonialCard,
+  .eventItem {
+    padding: 25px;
   }
 
-  .finalCtaSection h2 {
+  .finalContainer h2 {
     font-size: 1.8rem;
-  }
-
-  .finalCtaSection p {
-    font-size: 1rem;
-  }
-
-  .paragraph {
-    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .heroTitle {
-    font-size: 2rem;
-  }
-
-  .heroSubtitle {
-    font-size: 1.1rem;
-  }
-
-  .heroContent {
-    padding: 0 20px 50px;
+  .heroSection {
+    height: 60vh;
   }
 
   .aboutSection,
@@ -625,26 +562,33 @@
   .podcastSection,
   .workSection,
   .testimonialsSection,
-  .finalCtaSection {
-    padding: 40px 15px;
+  .finalSection {
+    padding: 40px 16px;
   }
 
-  .aboutContent h2,
-  .philosophySection h2,
-  .workSection h2,
-  .podcastSection h2,
-  .testimonialsSection h2 {
-    font-size: 1.6rem;
-    margin-bottom: 30px;
+  .aboutText h1 {
+    font-size: 2rem;
+  }
+
+  .aboutText p {
+    font-size: 0.95rem;
+  }
+
+  .workCta a,
+  .finalCta {
+    padding: 14px 30px;
+    font-size: 0.9rem;
+  }
+
+  .eventMeta {
+    flex-wrap: wrap;
+  }
+
+  .stats {
+    gap: 20px;
   }
 
   .statNumber {
-    font-size: 2.5rem;
-  }
-
-  .ctaButton,
-  .finalCtaButton {
-    padding: 14px 30px;
-    font-size: 0.95rem;
+    font-size: 2.2rem;
   }
 }
