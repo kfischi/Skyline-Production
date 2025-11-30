@@ -6,7 +6,7 @@ import { chatFlow, translations } from '@/lib/chatFlow';
 
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); // הכפתור מוסתר בהתחלה
+  const [isVisible, setIsVisible] = useState(false);
   const [messages, setMessages] = useState([
     { 
       id: 1, 
@@ -30,19 +30,17 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages, isOpen]);
 
-  // הכפתור מופיע אחרי 10 שניות
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(true); // מציג את הכפתור
-    }, 10000); // 10 שניות
+      setIsVisible(true);
+    }, 10000);
 
     return () => clearTimeout(timer);
-  }, []); // רק פעם אחת כשהקומפוננטה נטענת
+  }, []);
 
   const handleButtonClick = (button) => {
     const currentStepData = chatFlow[currentStep];
     
-    // אם זו שאלת בחירה מרובה
     if (currentStepData.type === 'multiSelect') {
       const index = selectedConcerns.indexOf(button.value);
       if (index > -1) {
@@ -53,9 +51,8 @@ export default function ChatBot() {
       return;
     }
 
-    // בחירה רגילה - שימוש ב-id של השלב (לא שם השלב)
     const stepData = {};
-    const fieldName = currentStepData.id; // 'start' → 'type', 'hasDate' → 'hasDate'
+    const fieldName = currentStepData.id;
     stepData[fieldName] = button.value;
     
     const newUserData = { ...userData, ...stepData };
@@ -89,7 +86,7 @@ export default function ChatBot() {
     if (selectedConcerns.length === 0) return;
 
     const stepData = {};
-    const fieldName = chatFlow[currentStep].id; // שימוש ב-id
+    const fieldName = chatFlow[currentStep].id;
     stepData[fieldName] = selectedConcerns;
     
     const newUserData = { ...userData, ...stepData };
@@ -156,7 +153,6 @@ export default function ChatBot() {
     setUserData(newUserData);
     setInput("");
 
-    // אם זה שלב הפרטים - שלח לדנה!
     if (currentStepData.type === 'phone' || currentStepData.type === 'email') {
       setIsLoading(true);
       
@@ -170,7 +166,6 @@ export default function ChatBot() {
         const data = await response.json();
         
         if (data.success && data.whatsappUrl) {
-          // פתח ווטסאפ בחלון חדש
           window.open(data.whatsappUrl, '_blank');
         }
       } catch (error) {
@@ -194,7 +189,6 @@ export default function ChatBot() {
 
   return (
     <>
-      {/* כפתור צף עם תמונת דנה - מופיע אחרי 10 שניות */}
       {isVisible && (
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -222,8 +216,14 @@ export default function ChatBot() {
             </div>
           ) : (
             <img 
-              src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
+              src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764532272/%D7%93%D7%A0%D7%94-%D7%91%D7%95%D7%982_usy9rb.png"
               alt="דנה"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center'
+              }}
             />
           )}
         </div>
@@ -238,15 +238,19 @@ export default function ChatBot() {
       </button>
       )}
 
-      {/* חלון הצ'אט */}
       {isOpen && (
         <div className={styles.chatWindow}>
-          {/* כותרת */}
           <div className={styles.chatHeader}>
             <div className={styles.headerIcon}>
               <img 
-                src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764532272/%D7%93%D7%A0%D7%94-%D7%91%D7%95%D7%982_usy9rb.png"
                 alt="דנה"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center'
+                }}
               />
             </div>
             <div>
@@ -257,7 +261,6 @@ export default function ChatBot() {
             </div>
           </div>
 
-          {/* איזור ההודעות */}
           <div className={styles.messagesArea}>
             {messages.map((msg) => (
               <div key={msg.id}>
@@ -267,8 +270,14 @@ export default function ChatBot() {
                       '👤'
                     ) : (
                       <img 
-                        src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
+                        src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764532272/%D7%93%D7%A0%D7%94-%D7%91%D7%95%D7%982_usy9rb.png"
                         alt="דנה"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center'
+                        }}
                       />
                     )}
                   </div>
@@ -277,7 +286,6 @@ export default function ChatBot() {
                   </div>
                 </div>
 
-                {/* כפתורים */}
                 {msg.buttons && msg.sender === 'bot' && (
                   <div className={styles.buttonsContainer}>
                     {msg.buttons.map((btn, idx) => (
@@ -305,7 +313,6 @@ export default function ChatBot() {
                   </div>
                 )}
 
-                {/* שדה טקסט */}
                 {(msg.type === 'text' || msg.type === 'phone' || msg.type === 'email') && msg.sender === 'bot' && (
                   <div className={styles.textInputContainer}>
                     <input
@@ -333,7 +340,6 @@ export default function ChatBot() {
                   </div>
                 )}
 
-                {/* כפתור שליחה לווטסאפ בסוף */}
                 {msg.type === 'final' && msg.sender === 'bot' && (
                   <div className={styles.finalButtonContainer}>
                     <button 
@@ -349,7 +355,6 @@ export default function ChatBot() {
                           if (data.success && data.whatsappUrl) {
                             window.open(data.whatsappUrl, '_blank');
                             
-                            // הוספת הודעת אישור
                             const confirmMsg = {
                               id: Date.now() + 1,
                               text: '✅ הווטסאפ נפתח! אם לא נפתח, לחץ על הכפתור שוב או פנה ישירות: 052-620-3038',
