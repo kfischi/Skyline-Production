@@ -36,6 +36,7 @@ export default function Navbar() {
           <li><Link href="/method">השיטה</Link></li>
           <li><Link href="/portfolio">הביצוע</Link></li>
           <li><Link href="/production-room">חדר ההפקה</Link></li>
+          <li><Link href="/podcast">פודקאסט</Link></li> {/* ⬅️ חדש! */}
         </ul>
 
         {/* כפתור יצירת קשר - ימין */}
@@ -62,6 +63,7 @@ export default function Navbar() {
           <li><Link href="/method" onClick={closeMobileMenu}>השיטה</Link></li>
           <li><Link href="/portfolio" onClick={closeMobileMenu}>הביצוע</Link></li>
           <li><Link href="/production-room" onClick={closeMobileMenu}>חדר ההפקה</Link></li>
+          <li><Link href="/podcast" onClick={closeMobileMenu}>פודקאסט</Link></li> {/* ⬅️ חדש! */}
           <li>
             <a 
               href="mailto:info@skylineproductions.com" 
