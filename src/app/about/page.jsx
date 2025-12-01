@@ -66,17 +66,11 @@ export default function AboutPage() {
     <div className={styles.pageContainer}>
       {/* Hero Section */}
       <section className={styles.heroSection}>
-        <picture>
-          <source 
-            media="(max-width: 768px)" 
-            srcSet="https://res.cloudinary.com/daez7e9nj/image/upload/v1764586149/דנה_ישראלי_הפקות_אירועים_3_tulwra.png"
-          />
-          <img 
-            src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764581919/דנה_ישראלי_הפקות_אירועים_2_rfzi7m.png"
-            alt="דנה ישראלי - Skyline Events"
-            className={styles.heroImage}
-          />
-        </picture>
+        <img 
+          src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764581919/דנה_ישראלי_הפקות_אירועים_2_rfzi7m.png"
+          alt="דנה ישראלי - Skyline Events"
+          className={styles.heroImage}
+        />
         <div className={styles.heroOverlay}></div>
       </section>
 
@@ -86,7 +80,7 @@ export default function AboutPage() {
         {/* Dana's Story */}
         <section className={styles.storySection}>
           <h1 className={styles.mainTitle}>דנה | Skyline Events</h1>
-          <p className={styles.subtitle}>להפוך את הדמיון שבראש שלכם – למציאות.</p>
+          <p className={styles.subtitle}>להפוך את הדימיון שלכם למציאות</p>
           
           <div className={styles.storyText}>
             <p>
@@ -206,112 +200,112 @@ export default function AboutPage() {
           <div className={styles.testimonialsGrid}>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527697/Screenshot_20210929-112335_WhatsApp_cltzr5.jpg" 
                 alt="המלצה 1"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527694/Screenshot_20210929-112330_WhatsApp_t5ynmg.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527694/Screenshot_20210929-112330_WhatsApp_t5ynmg.jpg" 
                 alt="המלצה 2"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527692/Screenshot_20210929-112320_WhatsApp_r03b2m.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527692/Screenshot_20210929-112320_WhatsApp_r03b2m.jpg" 
                 alt="המלצה 3"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527689/Screenshot_20210929-112316_WhatsApp_h7nw9u.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527689/Screenshot_20210929-112316_WhatsApp_h7nw9u.jpg" 
                 alt="המלצה 4"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527686/Screenshot_20210929-112301_WhatsApp_xfc2p9.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527686/Screenshot_20210929-112301_WhatsApp_xfc2p9.jpg" 
                 alt="המלצה 5"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527684/Screenshot_20210927-145807_WhatsAppBusiness_kbi3xk.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527684/Screenshot_20210927-145807_WhatsAppBusiness_kbi3xk.jpg" 
                 alt="המלצה 6"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527681/Screenshot_20210927-145759_WhatsAppBusiness_cn3kmp.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527681/Screenshot_20210927-145759_WhatsAppBusiness_cn3kmp.jpg" 
                 alt="המלצה 7"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527645/Screenshot_20210927-145637_WhatsAppBusiness_qvdno0.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527645/Screenshot_20210927-145637_WhatsAppBusiness_qvdno0.jpg" 
                 alt="המלצה 8"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527641/Screenshot_20210927-145435_WhatsAppBusiness_eli3k8.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527641/Screenshot_20210927-145435_WhatsAppBusiness_eli3k8.jpg" 
                 alt="המלצה 9"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527642/Screenshot_20210927-145628_WhatsAppBusiness_cj9niu.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527642/Screenshot_20210927-145628_WhatsAppBusiness_cj9niu.jpg" 
                 alt="המלצה 10"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527640/Screenshot_20210927-145619_WhatsAppBusiness_yspto8.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527640/Screenshot_20210927-145619_WhatsAppBusiness_yspto8.jpg" 
                 alt="המלצה 11"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764544269/Screenshot_20210927-145427_WhatsAppBusiness_tsjqsr.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764544269/Screenshot_20210927-145427_WhatsAppBusiness_tsjqsr.jpg" 
                 alt="המלצה 12"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527628/Screenshot_20210902-172352_WhatsApp_ghkpef.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527628/Screenshot_20210902-172352_WhatsApp_ghkpef.jpg" 
                 alt="המלצה 13"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527626/Screenshot_20210902-131503_WhatsApp_nvrky0.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527626/Screenshot_20210902-131503_WhatsApp_nvrky0.jpg" 
                 alt="המלצה 14"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527613/Screenshot_20210729-040527_WhatsAppBusiness_cucy9d.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527613/Screenshot_20210729-040527_WhatsAppBusiness_cucy9d.jpg" 
                 alt="המלצה 15"
                 className={styles.testimonialImage}
               />
             </div>
             <div className={styles.testimonialCard}>
               <img 
-                src="https://res.cloudinary.com/daez7e9nj/image/upload/c_crop,g_north,h_800/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg" 
+                src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764527599/Screenshot_20210423-072737_WhatsAppBusiness_orj9s1.jpg" 
                 alt="המלצה 16"
                 className={styles.testimonialImage}
               />
