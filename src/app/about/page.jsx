@@ -106,25 +106,25 @@ export default function AboutPage() {
 
   return (
     <div className={styles.container}>
-      {/* HERO */}
+      {/* HERO WITH NEW IMAGE */}
       <section className={styles.heroSection}>
         <img
-          src="https://res.cloudinary.com/dptyfvwyo/image/upload/e_background_removal/v1764427839/%D7%93%D7%A0%D7%94_%D7%91%D7%95%D7%98_vlfygc.png"
-          alt="דנה"
+          src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764581919/%D7%93%D7%A0%D7%94_%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99_%D7%94%D7%A4%D7%A7%D7%95%D7%AA_%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%D7%9D_2_rfzi7m.png"
+          alt="דנה - Skyline Productions"
           className={styles.heroImage}
         />
         <div className={styles.heroOverlay}></div>
+        <h1 className={styles.heroTitle}>דנה</h1>
       </section>
 
       {/* ABOUT SECTION */}
       <section className={styles.aboutSection}>
         <div className={styles.aboutContainer}>
-          <h1>נעים להכיר</h1>
-          <p className={styles.subtitle}>אני דנה</p>
-
-          <div className={styles.story}>
+          <h2 className={styles.sectionTitle}>הסיפור שלי</h2>
+          
+          <div className={styles.storyContent}>
             <p>
-              <strong>בטייטל אני "מפיקת אירועים". בפועל? אני מחברת בין הדמיון למציאות.</strong>
+              בטייטל אני "מפיקת אירועים". בפועל? אני מחברת בין הדמיון למציאות.
             </p>
 
             <p>
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              אחרי יותר מ-10 שנים וקרוב ל-200 אירועים, אני מביאה איתי ארגז כלים שהוא שילוב נדיר בין לב ענק לראש שקט.
+              אחרי יותר מ-<strong>10 שנים</strong> וקרוב ל-<strong>200 אירועים</strong>, אני מביאה איתי ארגז כלים שהוא שילוב נדיר בין לב ענק לראש שקט.
             </p>
 
             <p>
@@ -165,7 +165,7 @@ export default function AboutPage() {
       {/* PHILOSOPHY SECTION */}
       <section className={styles.philosophySection}>
         <div className={styles.philosophyContainer}>
-          <h2>המצפן שלי</h2>
+          <h2>במה אני מאמינה</h2>
 
           <div className={styles.philosophyGrid}>
             {philosophy.map((item) => (
@@ -179,10 +179,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* PODCASTS SECTION - TITLES ONLY */}
+      {/* PODCASTS SECTION */}
       <section className={styles.podcastSection}>
         <div className={styles.podcastContainer}>
-          <h2>חתונה מטאל</h2>
+          <h2>מחדר ההפקה</h2>
 
           <div className={styles.podcastGrid}>
             {podcasts.map((podcast) => (
