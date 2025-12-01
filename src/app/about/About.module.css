@@ -33,9 +33,9 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(248, 246, 240, 1) 100%
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.05) 60%,
+    transparent 100%
   );
 }
 
@@ -141,11 +141,12 @@
 }
 
 .philosophyCard {
-  background: white;
+  background: #f5f3ed;
   padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(44, 40, 38, 0.08);
+  box-shadow: 0 4px 20px rgba(44, 40, 38, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e8e4da;
 }
 
 .philosophyCard:hover {
@@ -157,7 +158,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text-dark);
+  color: #1a1816;
   margin-bottom: 15px;
   text-align: right;
 }
@@ -166,7 +167,7 @@
   font-family: 'Assistant', sans-serif;
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--color-text-muted);
+  color: #3d3935;
   text-align: right;
 }
 
@@ -187,9 +188,12 @@
 
 .podcastsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
   margin-bottom: 50px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .podcastCard {
@@ -208,7 +212,7 @@
 .videoWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* תצוגת טיקטוק! */
+  aspect-ratio: 9 / 16; /* אנכי כמו טיקטוק! */
   background: #000;
   overflow: hidden;
 }
@@ -216,7 +220,7 @@
 .podcastVideo {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* מראה את כל התמונה */
+  object-fit: cover;
   object-position: center;
 }
 
@@ -396,8 +400,8 @@
   }
 
   .podcastsGrid {
-    grid-template-columns: 1fr;
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .socialLinks {
