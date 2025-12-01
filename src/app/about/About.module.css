@@ -22,13 +22,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center center;
 }
 
-/* Mobile - מיקום שונה */
+/* Tablet */
+@media (max-width: 1024px) {
+  .heroImage {
+    object-position: center 40%;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .heroImage {
-    object-position: center 20%;
+    object-position: center 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroImage {
+    object-position: center 25%;
   }
 }
 
