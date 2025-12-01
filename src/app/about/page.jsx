@@ -67,7 +67,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className={styles.heroSection}>
         <img 
-          src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764581919/דנה_ישראלי_הפקות_אירועים_2_rfzi7m.png"
+          src="https://res.cloudinary.com/daez7e9nj/image/upload/v1764591234/דנה_ישראלי_הפקות_אירועים_5_xe2iml.png"
           alt="דנה ישראלי - Skyline Events"
           className={styles.heroImage}
         />
