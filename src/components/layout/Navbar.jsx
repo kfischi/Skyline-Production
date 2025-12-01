@@ -1,13 +1,11 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,20 +23,6 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-  // בדוק אם הלינק הוא הדף הפעיל
-  const isActive = (path) => {
-    if (path === '/') {
-      return pathname === '/';
-    }
-    return pathname.startsWith(path);
-  };
-
-  const navItems = [
-    { label: 'השיטה', href: '/method' },
-    { label: 'הביצוע', href: '/portfolio' },
-    { label: 'חדר ההפקה', href: '/production-room' }
-  ];
-
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.navContainer}>
@@ -49,16 +33,10 @@ export default function Navbar() {
 
         {/* תפריט רגיל - מרכז - Desktop */}
         <ul className={styles.navLinks}>
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link 
-                href={item.href}
-                className={`${styles.navLink} ${isActive(item.href) ? styles.active : ''}`}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li><Link href="/method">השיטה</Link></li>
+          <li><Link href="/portfolio">הביצוע</Link></li>
+          <li><Link href="/production-room">חדר ההפקה</Link></li>
+          <li><Link href="/about">אודות</Link></li>
         </ul>
 
         {/* כפתור יצירת קשר - ימין */}
@@ -81,26 +59,11 @@ export default function Navbar() {
       {/* תפריט נייד */}
       <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.show : ''}`}>
         <ul className={styles.mobileNavLinks}>
-          <li>
-            <Link 
-              href="/" 
-              onClick={closeMobileMenu}
-              className={isActive('/') ? styles.mobileActive : ''}
-            >
-              עמוד הבית
-            </Link>
-          </li>
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link 
-                href={item.href}
-                onClick={closeMobileMenu}
-                className={isActive(item.href) ? styles.mobileActive : ''}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li><Link href="/" onClick={closeMobileMenu}>עמוד הבית</Link></li>
+          <li><Link href="/method" onClick={closeMobileMenu}>השיטה</Link></li>
+          <li><Link href="/portfolio" onClick={closeMobileMenu}>הביצוע</Link></li>
+          <li><Link href="/production-room" onClick={closeMobileMenu}>חדר ההפקה</Link></li>
+          <li><Link href="/about" onClick={closeMobileMenu}>אודות</Link></li>
           <li>
             <a 
               href="mailto:info@skylineproductions.com" 
