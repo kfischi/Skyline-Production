@@ -3,8 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
-  const [isMuted, setIsMuted] = useState(true); // מתחיל muted בגלל מגבלות דפדפן
-  const [showSoundPrompt, setShowSoundPrompt] = useState(true); // הצגת בקשה להפעלת סאונד
+  const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -28,24 +27,13 @@ export default function HeroSection() {
       const newMutedState = !isMuted;
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
-      setShowSoundPrompt(false);
-    }
-  };
-
-  const enableSound = () => {
-    if (videoRef.current) {
-      // Galaxy/Android fix: force play after unmuting
-      videoRef.current.muted = false;
       
-      // Restart playback to ensure sound works
-      const currentTime = videoRef.current.currentTime;
-      videoRef.current.currentTime = currentTime;
-      videoRef.current.play().then(() => {
-        setIsMuted(false);
-        setShowSoundPrompt(false);
-      }).catch(err => {
-        console.log('Play error:', err);
-      });
+      // Galaxy/Android fix: restart playback to ensure sound works
+      if (!newMutedState) {
+        const currentTime = videoRef.current.currentTime;
+        videoRef.current.currentTime = currentTime;
+        videoRef.current.play().catch(err => console.log('Play error:', err));
+      }
     }
   };
 
@@ -69,26 +57,7 @@ export default function HeroSection() {
       
       <div className={styles.heroOverlay}></div>
       
-      {/* בקשה להפעלת סאונד - במרכז המסך */}
-      {showSoundPrompt && (
-        <button 
-          className={styles.soundPromptButton}
-          onClick={enableSound}
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            enableSound();
-          }}
-          aria-label="הפעל סאונד"
-        >
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-          </svg>
-          <span>לחץ להפעלת סאונד</span>
-        </button>
-      )}
-      
-      {/* כפתור קול קטן - בפינה */}
+      {/* כפתור קול - בפינה */}
       <button 
         className={styles.soundButton}
         onClick={toggleMute}
