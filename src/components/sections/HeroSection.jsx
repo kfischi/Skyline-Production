@@ -34,9 +34,18 @@ export default function HeroSection() {
 
   const enableSound = () => {
     if (videoRef.current) {
+      // Galaxy/Android fix: force play after unmuting
       videoRef.current.muted = false;
-      setIsMuted(false);
-      setShowSoundPrompt(false);
+      
+      // Restart playback to ensure sound works
+      const currentTime = videoRef.current.currentTime;
+      videoRef.current.currentTime = currentTime;
+      videoRef.current.play().then(() => {
+        setIsMuted(false);
+        setShowSoundPrompt(false);
+      }).catch(err => {
+        console.log('Play error:', err);
+      });
     }
   };
 
@@ -65,6 +74,10 @@ export default function HeroSection() {
         <button 
           className={styles.soundPromptButton}
           onClick={enableSound}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            enableSound();
+          }}
           aria-label="הפעל סאונד"
         >
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -79,6 +92,10 @@ export default function HeroSection() {
       <button 
         className={styles.soundButton}
         onClick={toggleMute}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          toggleMute();
+        }}
         aria-label={isMuted ? "הפעל קול" : "השתק"}
       >
         {isMuted ? (
