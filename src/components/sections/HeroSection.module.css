@@ -122,63 +122,7 @@
   transform: scale(1.1);
 }
 
-/* כפתור סאונד גדול במרכז */
-.soundPromptButton {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  padding: 30px 40px;
-  background: rgba(196, 165, 114, 0.95);
-  border: 3px solid white;
-  border-radius: 20px;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  animation: pulse 2s infinite;
-}
-
-.soundPromptButton:hover {
-  background: rgba(212, 181, 130, 1);
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-}
-
-.soundPromptButton:active {
-  transform: translate(-50%, -50%) scale(0.98);
-}
-
-.soundPromptButton svg {
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-}
-
-.soundPromptButton span {
-  font-family: 'Assistant', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.05);
-  }
-}
-
-/* כפתור סאונד קטן בפינה */
+/* כפתור סאונד - בפינה */
 .soundButton {
   position: absolute;
   bottom: 100px;
@@ -317,21 +261,6 @@
     width: 24px;
     height: 24px;
   }
-
-  .soundPromptButton {
-    padding: 25px 35px;
-    max-width: 90%;
-  }
-
-  .soundPromptButton svg {
-    width: 40px;
-    height: 40px;
-  }
-
-  .soundPromptButton span {
-    font-size: 1.1rem;
-    text-align: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -361,18 +290,8 @@
     height: 45px;
   }
 
-  .soundPromptButton {
-    padding: 20px 30px;
-    max-width: 85%;
-  }
-
-  .soundPromptButton svg {
-    width: 36px;
-    height: 36px;
-  }
-
-  .soundPromptButton span {
-    font-size: 1rem;
-    text-align: center;
+  .soundButton svg {
+    width: 22px;
+    height: 22px;
   }
 }
