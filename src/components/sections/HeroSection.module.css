@@ -85,6 +85,7 @@
   color: white;
   direction: rtl;
   text-align: center;
+  width: 100%;
 }
 
 .heroSubtitle {
@@ -94,6 +95,8 @@
   margin-top: 15px;
   color: var(--color-accent);
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  text-align: center;
 }
 
 .scrollButton {
@@ -119,7 +122,63 @@
   transform: scale(1.1);
 }
 
-/* כפתור קול */
+/* כפתור סאונד גדול במרכז */
+.soundPromptButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 40px;
+  background: rgba(196, 165, 114, 0.95);
+  border: 3px solid white;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.soundPromptButton:hover {
+  background: rgba(212, 181, 130, 1);
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.soundPromptButton:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+.soundPromptButton svg {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.soundPromptButton span {
+  font-family: 'Assistant', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+/* כפתור סאונד קטן בפינה */
 .soundButton {
   position: absolute;
   bottom: 100px;
@@ -220,51 +279,100 @@
   
   .heroTitle {
     font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
   }
   
   .heroSubtitle {
     font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
   }
   
   .heroContent {
     padding: 0 20px 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .scrollButton {
     width: 45px;
     height: 45px;
+    margin: 20px auto 0 auto;
   }
 
   .soundButton {
     bottom: 70px;
     left: 20px;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 
   .soundButton svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .soundPromptButton {
+    padding: 25px 35px;
+    max-width: 90%;
+  }
+
+  .soundPromptButton svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .soundPromptButton span {
+    font-size: 1.1rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   .heroTitle {
     font-size: 2rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 5px;
   }
   
   .heroSubtitle {
     font-size: 1.4rem;
+    text-align: center;
+    width: 100%;
+    padding: 0 5px;
   }
   
   .heroContent {
     padding: 0 15px 40px 15px;
+    text-align: center;
   }
 
   .soundButton {
     bottom: 60px;
     left: 15px;
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .soundPromptButton {
+    padding: 20px 30px;
+    max-width: 85%;
+  }
+
+  .soundPromptButton svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .soundPromptButton span {
+    font-size: 1rem;
+    text-align: center;
   }
 }
