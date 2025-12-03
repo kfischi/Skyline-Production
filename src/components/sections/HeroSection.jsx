@@ -32,7 +32,7 @@ export default function HeroSection() {
         className={styles.heroVideo}
       >
         <source
-          src="https://res.cloudinary.com/dptyfvwyo/video/upload/v1764366409/SKYLINE_PRODUCTION_V.4.4_c5rvx2.mp4"
+          src="https://res.cloudinary.com/daez7e9nj/video/upload/v1764800418/חדש_bjjfxo.mp4"
           type="video/mp4"
         />
         הדפדפן שלך לא תומך בתג video
