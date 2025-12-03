@@ -8,23 +8,11 @@ export default function HeroSection() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // נסיון אוטומטי להפעיל סאונד (יעבוד רק בדסקטופ)
+    // וידוא שהסרטון מתחיל לנגן
     if (videoRef.current) {
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // אם הצליח לנגן, ננסה להפעיל סאונד
-            videoRef.current.muted = false;
-            setIsMuted(false);
-            setShowSoundPrompt(false);
-          })
-          .catch(() => {
-            // נכשל - נשאר muted
-            videoRef.current.muted = true;
-            setIsMuted(true);
-          });
-      }
+      videoRef.current.play().catch(error => {
+        console.log('Autoplay prevented:', error);
+      });
     }
   }, []);
 
@@ -41,11 +29,6 @@ export default function HeroSection() {
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
       setShowSoundPrompt(false);
-      
-      // וידוא שהסרטון ממשיך לנגן
-      if (videoRef.current.paused) {
-        videoRef.current.play().catch(e => console.log('Play error:', e));
-      }
     }
   };
 
@@ -54,11 +37,6 @@ export default function HeroSection() {
       videoRef.current.muted = false;
       setIsMuted(false);
       setShowSoundPrompt(false);
-      
-      // וידוא שהסרטון ממשיך לנגן
-      if (videoRef.current.paused) {
-        videoRef.current.play().catch(e => console.log('Play error:', e));
-      }
     }
   };
 
@@ -71,7 +49,6 @@ export default function HeroSection() {
         loop 
         muted
         playsInline
-        webkit-playsinline="true"
         className={styles.heroVideo}
       >
         <source
