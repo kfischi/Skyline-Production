@@ -4,6 +4,7 @@ import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
   const [isMuted, setIsMuted] = useState(true);
+  const [showSoundHint, setShowSoundHint] = useState(true);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -13,6 +14,13 @@ export default function HeroSection() {
         console.log('Autoplay prevented:', error);
       });
     }
+
+    // הודעת הסאונד נעלמת אחרי 8 שניות
+    const timer = setTimeout(() => {
+      setShowSoundHint(false);
+    }, 8000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToContent = () => {
@@ -22,13 +30,19 @@ export default function HeroSection() {
     });
   };
 
-  const toggleMute = () => {
+  const toggleMute = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     if (videoRef.current) {
       const newMutedState = !isMuted;
       videoRef.current.muted = newMutedState;
       setIsMuted(newMutedState);
+      setShowSoundHint(false); // הסתר הודעה אחרי לחיצה
       
-      // Galaxy/Android fix: restart playback to ensure sound works
+      // Galaxy/Android fix
       if (!newMutedState) {
         const currentTime = videoRef.current.currentTime;
         videoRef.current.currentTime = currentTime;
@@ -57,15 +71,22 @@ export default function HeroSection() {
       
       <div className={styles.heroOverlay}></div>
       
+      {/* הודעת סאונד - למעלה בפינה */}
+      {showSoundHint && isMuted && (
+        <div className={styles.soundHint}>
+          לחץ 🔊 לסאונד
+        </div>
+      )}
+      
       {/* כפתור קול - בפינה */}
       <button 
         className={styles.soundButton}
         onClick={toggleMute}
-        onTouchEnd={(e) => {
+        onPointerDown={(e) => {
           e.preventDefault();
-          toggleMute();
         }}
         aria-label={isMuted ? "הפעל קול" : "השתק"}
+        type="button"
       >
         {isMuted ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
