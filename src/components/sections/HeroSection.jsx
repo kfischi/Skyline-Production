@@ -1,10 +1,32 @@
 "use client";
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(true); // מתחיל muted בגלל מגבלות דפדפן
+  const [showSoundPrompt, setShowSoundPrompt] = useState(true); // הצגת בקשה להפעלת סאונד
   const videoRef = useRef(null);
+
+  useEffect(() => {
+    // נסיון אוטומטי להפעיל סאונד (יעבוד רק בדסקטופ)
+    if (videoRef.current) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // אם הצליח לנגן, ננסה להפעיל סאונד
+            videoRef.current.muted = false;
+            setIsMuted(false);
+            setShowSoundPrompt(false);
+          })
+          .catch(() => {
+            // נכשל - נשאר muted
+            videoRef.current.muted = true;
+            setIsMuted(true);
+          });
+      }
+    }
+  }, []);
 
   const scrollToContent = () => {
     window.scrollTo({
@@ -15,8 +37,28 @@ export default function HeroSection() {
 
   const toggleMute = () => {
     if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
+      const newMutedState = !isMuted;
+      videoRef.current.muted = newMutedState;
+      setIsMuted(newMutedState);
+      setShowSoundPrompt(false);
+      
+      // וידוא שהסרטון ממשיך לנגן
+      if (videoRef.current.paused) {
+        videoRef.current.play().catch(e => console.log('Play error:', e));
+      }
+    }
+  };
+
+  const enableSound = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false;
+      setIsMuted(false);
+      setShowSoundPrompt(false);
+      
+      // וידוא שהסרטון ממשיך לנגן
+      if (videoRef.current.paused) {
+        videoRef.current.play().catch(e => console.log('Play error:', e));
+      }
     }
   };
 
@@ -27,8 +69,9 @@ export default function HeroSection() {
         ref={videoRef}
         autoPlay 
         loop 
-        muted 
-        playsInline 
+        muted
+        playsInline
+        webkit-playsinline="true"
         className={styles.heroVideo}
       >
         <source
@@ -40,7 +83,22 @@ export default function HeroSection() {
       
       <div className={styles.heroOverlay}></div>
       
-      {/* כפתור קול */}
+      {/* בקשה להפעלת סאונד - במרכז המסך */}
+      {showSoundPrompt && (
+        <button 
+          className={styles.soundPromptButton}
+          onClick={enableSound}
+          aria-label="הפעל סאונד"
+        >
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span>לחץ להפעלת סאונד</span>
+        </button>
+      )}
+      
+      {/* כפתור קול קטן - בפינה */}
       <button 
         className={styles.soundButton}
         onClick={toggleMute}
