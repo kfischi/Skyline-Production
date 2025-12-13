@@ -5,11 +5,6 @@ import styles from './Method.module.css';
 const videoUrlPlanning = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4";
 const videoUrlExecution = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_סימנים_שהאולם_kbqjzv.mp4";
 
-export const metadata = {
-  title: 'השיטה | Skyline Productions',
-  description: 'החזון שלכם. התכנון שלנו. השקט הנפשי שלכם.',
-};
-
 export default function MethodPage() {
   return (
     <div className={styles.pageContainer}>
@@ -22,7 +17,8 @@ export default function MethodPage() {
             fill
             priority
             quality={100}
-            className={styles.heroImage}
+            sizes="100vw"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
         </div>
         <div className={styles.heroOverlay}></div>
@@ -48,7 +44,7 @@ export default function MethodPage() {
               <span className={styles.stepNumber}>01</span>
               <h2 className={styles.stepTitle}>פגישת קונספט (The Vision)</h2>
               <p className={styles.stepDescription}>
-                אנחנו לא מתחילים ב"ספקים". אנחנו מתחילים בכם.
+                אנחנו לא מתחילים ב&quot;ספקים&quot;. אנחנו מתחילים בכם.
                 השלב הראשון הוא פגישת אפיון פסיכולוגית. אנחנו צוללים ל-DNA שלכם, ל-Vibe שאתם רוצים לשדר ולסיפור שאתם רוצים לספר.
               </p>
             </div>
@@ -65,7 +61,7 @@ export default function MethodPage() {
               <h2 className={styles.stepTitle}>ליקוט וניהול (The Curation)</h2>
               <p className={styles.stepDescription}>
                 אחרי שפיצחנו את הקונספט, אנחנו מרכיבים את הנבחרת.
-                הצוות שלנו מנהל את כל החוזים, הלוגיסטיקה ובניית הלו"ז לפרטי פרטים.
+                הצוות שלנו מנהל את כל החוזים, הלוגיסטיקה ובניית הלו&quot;ז לפרטי פרטים.
               </p>
             </div>
             <div className={styles.stepVisual}>
