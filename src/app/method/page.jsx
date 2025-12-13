@@ -1,4 +1,4 @@
-import styles from './Method_FULL.module.css';
+import styles from './Method.module.css';
 
 const videoUrlPodcast = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4";
 const videoUrlPlanning = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4";
