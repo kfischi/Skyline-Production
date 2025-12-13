@@ -8,11 +8,11 @@ const videoUrlExecution = "https://res.cloudinary.com/dptyfvwyo/video/upload/v17
 export default function MethodPage() {
   return (
     <div className={styles.pageContainer}>
-      {/* Hero Section - תמונה מסך מלא */}
+      {/* Hero Section - תמונה חדשה מסך מלא */}
       <section className={styles.heroSection}>
         <div className={styles.heroImageContainer}>
           <Image
-            src="https://res.cloudinary.com/daez7e9nj/image/upload/v1765618482/דף_השיטה_zxblbt.png"
+            src="https://res.cloudinary.com/daez7e9nj/image/upload/q_auto:best,f_auto,e_sharpen:80/v1765643635/קאבר_לשיטה_aoyffu.png"
             alt="השיטה של Skyline Productions"
             fill
             priority
