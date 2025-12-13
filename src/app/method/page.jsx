@@ -1,11 +1,9 @@
+import Image from 'next/image';
 import styles from './Method.module.css';
 
-const videoUrlPodcast = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425660/VID-20250916-WA0007_q8j5hk.mp4";
+// סרטונים לשלבים
 const videoUrlPlanning = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4";
-const videoUrlExecution = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_%D7%A1%D7%99%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%94%D7%90%D7%95%D7%9C%D7%9D_kbqjzv.mp4";
-
-// הסרטון הישן מעמוד הבית
-const oldHeroVideo = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1763892387/%D7%95%D7%99%D7%93%D7%90_%D7%A4%D7%AA%D7%99%D7%97%D7%94_wc9vnu.mp4";
+const videoUrlExecution = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_סימנים_שהאולם_kbqjzv.mp4";
 
 export const metadata = {
   title: 'השיטה | Skyline Productions',
@@ -15,14 +13,24 @@ export const metadata = {
 export default function MethodPage() {
   return (
     <div className={styles.pageContainer}>
-      {/* Hero Section מקוצר */}
+      {/* Hero Section - תמונה מסך מלא */}
       <section className={styles.heroSection}>
-        <video autoPlay loop muted playsInline className={styles.heroVideo}>
-          <source src={oldHeroVideo} type="video/mp4" />
-        </video>
+        <div className={styles.heroImageContainer}>
+          <Image
+            src="https://res.cloudinary.com/daez7e9nj/image/upload/v1765618482/דף_השיטה_zxblbt.png"
+            alt="השיטה של Skyline Productions"
+            fill
+            priority
+            quality={100}
+            className={styles.heroImage}
+          />
+        </div>
         <div className={styles.heroOverlay}></div>
-        <div className={styles.heroBreadcrumb}>
-          <h1>השיטה</h1>
+        
+        {/* כותרת על התמונה */}
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>השיטה</h1>
+          <p className={styles.heroSubtitle}>החזון שלכם. התכנון שלנו. השקט הנפשי שלכם.</p>
         </div>
       </section>
 
@@ -45,9 +53,9 @@ export default function MethodPage() {
               </p>
             </div>
             <div className={styles.stepVisual}>
-              <video autoPlay loop muted playsInline className={styles.stepVideo}>
-                <source src={videoUrlPodcast} type="video/mp4" />
-              </video>
+              <div className={styles.placeholderBox}>
+                <p>סרטון / תמונה לשלב 01</p>
+              </div>
             </div>
           </section>
 
