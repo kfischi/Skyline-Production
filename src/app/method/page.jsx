@@ -4,8 +4,8 @@ const videoUrlPodcast = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715
 const videoUrlPlanning = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425663/VID-20250916-WA0002_rdm3vh.mp4";
 const videoUrlExecution = "https://res.cloudinary.com/dptyfvwyo/video/upload/v1715425656/5_%D7%A1%D7%99%D7%9E%D7%A0%D7%99%D7%9D_%D7%A9%D7%94%D7%90%D7%95%D7%9C%D7%9D_kbqjzv.mp4";
 
-// Hero Image
-const heroImage = "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto:best,w_1920/v1734191108/WhatsApp_Image_2024-12-14_at_19.44.30_mvaqjw.jpg";
+// Hero Image - Updated!
+const heroImage = "https://res.cloudinary.com/daez7e9nj/image/upload/v1765643635/%D7%A7%D7%90%D7%91%D7%A8_%D7%9C%D7%A9%D7%99%D7%98%D7%94_aoyffu.png";
 
 export const metadata = {
   title: 'השיטה | Skyline Productions',
@@ -46,7 +46,7 @@ export default function MethodPage() {
           </div>
           
           <div className={styles.danaQuote}>
-            <p className={styles.quoteText}>"אני דנה ישראלי, ואני כנראה הדבר הכי טוב שקרה לכם."</p>
+            <p className={styles.quoteText}>"אני דנה ישראלי, ואפשר להגיד עלי שאני 'הוויקיפדיה' של עולם האירועים"</p>
             <p className={styles.quoteSubtext}>לא זה לא יהירות - זה ביטחון שמגיע מניסיון.</p>
           </div>
 
@@ -84,7 +84,7 @@ export default function MethodPage() {
             <ul className={styles.benefitsList}>
               <li>🎯 אני לא רק מפיקה - אני <strong>השותפה</strong> שלכם</li>
               <li>🎯 יש לי תשובה לכל שאלה (ואני מתכוונת <strong>לכל</strong> שאלה)</li>
-              <li>🎯 אני מכירה כל "שיטרוק" בעולם האירועים</li>
+              <li>🎯 אני מכירה כל "שטיק" בעולם האירועים</li>
               <li>🎯 <strong>אתם רק נהנים - אני דואגת לכל השאר</strong></li>
             </ul>
           </div>
@@ -94,7 +94,7 @@ export default function MethodPage() {
         <section className={styles.timelineSection}>
           <div className={styles.sectionHeader}>
             <span className={styles.sectionNumber}>02</span>
-            <h2 className={styles.sectionTitle}>מהרעיון ועד הרחבה - מה קורה בדרך?</h2>
+            <h2 className={styles.sectionTitle}>מהרעיון ועד הביצוע - מה קורה בדרך?</h2>
           </div>
 
           <div className={styles.timeline}>
@@ -190,7 +190,7 @@ export default function MethodPage() {
           </div>
 
           <div className={styles.timelineQuote}>
-            <p className={styles.quoteText}>"משאירים את הצ'ייסת - כמו שאומרים אצלנו מעבירים לקרוז קונטרול"</p>
+            <p className={styles.quoteText}>"מעבירים לקרוז קונטרול"</p>
             <p className={styles.quoteAuthor}>— דנה ישראלי</p>
           </div>
         </section>
@@ -200,7 +200,7 @@ export default function MethodPage() {
           <section className={styles.step}>
             <div className={styles.stepText}>
               <span className={styles.stepNumber}>01</span>
-              <h2 className={styles.stepTitle}>פגישת קונספט (The Vision)</h2>
+              <h2 className={styles.stepTitle}>פגישת קונספט</h2>
               <p className={styles.stepDescription}>
                 אנחנו לא מתחילים ב"ספקים". אנחנו מתחילים בכם.
                 השלב הראשון הוא פגישת אפיון פסיכולוגית. אנחנו צוללים ל-DNA שלכם, ל-Vibe שאתם רוצים לשדר ולסיפור שאתם רוצים לספר.
@@ -216,7 +216,7 @@ export default function MethodPage() {
           <section className={`${styles.step} ${styles.reverse}`}>
             <div className={styles.stepText}>
               <span className={styles.stepNumber}>02</span>
-              <h2 className={styles.stepTitle}>ליקוט וניהול (The Curation)</h2>
+              <h2 className={styles.stepTitle}>ליקוט וניהול</h2>
               <p className={styles.stepDescription}>
                 אחרי שפיצחנו את הקונספט, אנחנו מרכיבים את הנבחרת.
                 הצוות שלנו מנהל את כל החוזים, הלוגיסטיקה ובניית הלו"ז לפרטי פרטים.
@@ -232,7 +232,7 @@ export default function MethodPage() {
           <section className={styles.step}>
             <div className={styles.stepText}>
               <span className={styles.stepNumber}>03</span>
-              <h2 className={styles.stepTitle}>ביצוע (The Execution)</h2>
+              <h2 className={styles.stepTitle}>ביצוע</h2>
               <p className={styles.stepDescription}>
                 ביום האירוע, התפקיד היחיד שלכם הוא ליהנות.
                 הצוות של Skyline נועל נעלי עבודה ומתייצב בשטח.
@@ -289,7 +289,7 @@ export default function MethodPage() {
                   <span>אני "קבוצת רכישה" - הספקים נותנים לי מחירים מיוחדים → חיסכון של 20-30 אלף ₪</span>
                 </li>
                 <li>
-                  <strong>זמן שלכם חופשי</strong>
+                  <strong>הזמן שלכם</strong>
                   <span>40 שעות שלכם חוזרות אליכם → אין מחיר</span>
                 </li>
                 <li>
@@ -320,10 +320,6 @@ export default function MethodPage() {
             </div>
           </div>
 
-          <div className={styles.savingsQuote}>
-            <p className={styles.quoteText}>"אתם זוגות צריכים להסתכל על זה כעוצה שחוסכת כסף"</p>
-            <p className={styles.quoteAuthor}>— דנה ישראלי</p>
-          </div>
         </section>
 
         {/* סקציה חדשה 4: מה כלול בשירות */}
@@ -341,7 +337,7 @@ export default function MethodPage() {
                 תכנון ואסטרטגיה
               </h3>
               <ul className={styles.serviceList}>
-                <li>✅ פגישות קונספט ללא הגבלה (כן, ללא הגבלה!)</li>
+                <li>✅ פגישות קונספט</li>
                 <li>✅ בניית mood board מותאם אישית</li>
                 <li>✅ ניהול תקציב מלא + מעקב שוטף</li>
                 <li>✅ Timeline מפורט לכל שלב</li>
@@ -356,7 +352,7 @@ export default function MethodPage() {
                 ניהול ספקים
               </h3>
               <ul className={styles.serviceList}>
-                <li>✅ ליקוט 3-5 אופציות איכותיות לכל קטגוריה</li>
+                <li>✅ 3-5 אופציות איכותיות לכל קטגוריה</li>
                 <li>✅ ליווי אישי לכל הפגישות והדגימות</li>
                 <li>✅ משא ומתן על מחירים (הכוח שלי = החיסכון שלכם)</li>
                 <li>✅ ניהול וסגירת כל החוזים</li>
@@ -487,19 +483,19 @@ export default function MethodPage() {
             {/* סיפור 3 */}
             <div className={styles.storyCard}>
               <div className={styles.storyIcon}>👰</div>
-              <h3 className={styles.storyTitle}>הכלה ללא חינומה - שעתיים לפני</h3>
+              <h3 className={styles.storyTitle}>הכלה ללא הינומה - שעתיים לפני</h3>
               <div className={styles.storyContent}>
                 <div className={styles.storyProblem}>
                   <strong>מה קרה:</strong>
-                  <p>כלה שכחה את החינומה (כיסוי ראש) בבית מלון. שעתיים לפני החופה.</p>
+                  <p>כלה שכחה את ההינומה (כיסוי ראש) בבית מלון. שעתיים לפני החופה.</p>
                 </div>
                 <div className={styles.storySolution}>
                   <strong>מה עשיתי:</strong>
-                  <p>התקשרתי מיד לחברה מעצבת שמלות, נפגשנו, יצרנו חינומה חדשה תוך שעתיים.</p>
+                  <p>התקשרתי מיד לחברה מעצבת שמלות, נפגשנו, יצרנו הינומה חדשה תוך שעתיים.</p>
                 </div>
                 <div className={styles.storyResult}>
                   <strong>התוצאה:</strong>
-                  <p><strong>החינומה הייתה יפה אפילו יותר מהמקורית.</strong> הכלה בכתה מאושר.</p>
+                  <p><strong>ההינומה הייתה יפה אפילו יותר מהמקורית.</strong> הכלה בכתה מאושר.</p>
                 </div>
               </div>
             </div>
@@ -515,11 +511,11 @@ export default function MethodPage() {
                 </div>
                 <div className={styles.storySolution}>
                   <strong>מה עשיתי:</strong>
-                  <p>פשוט אמרתי "בואו, אני אוסעת אתכם". לקחתי אותם ברכב הפרטי שלי למלון.</p>
+                  <p>פשוט אמרתי "בואו, אני מסיעה אתכם". לקחתי אותם ברכב הפרטי שלי למלון.</p>
                 </div>
                 <div className={styles.storyResult}>
                   <strong>התוצאה:</strong>
-                  <p><strong>"כל הדרך הם הכמרו לי שמה היו עושים בלעדיי"</strong></p>
+                  <p><strong>"כל הדרך הם לא הפסיקו להגיד לי שמה היו עושים בלעדיי"</strong></p>
                 </div>
               </div>
             </div>
@@ -560,8 +556,8 @@ export default function MethodPage() {
         <section className={styles.ctaSection}>
           <h2>מוכנים להפקה ללא דאגות?</h2>
           <p>אם אתם מחפשים ניהול מלא, ירידה לפרטים ושקט נפשי מוחלט – בואו נדבר.</p>
-          <a href="mailto:info@skylineproductions.com" className={styles.ctaButton}>
-            לתאום פגישת קונספט
+          <a href="https://wa.me/972546203038?text=היי%20דנה!%20אשמח%20לקבוע%20פגישת%20קונספט%20😊" className={styles.ctaButton} target="_blank" rel="noopener noreferrer">
+            לתאום פגישת קונספט בוואטסאפ
           </a>
         </section>
 
