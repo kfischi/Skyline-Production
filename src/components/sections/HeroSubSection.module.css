@@ -119,7 +119,9 @@
   transform: scale(1.1);
 }
 
-/* כפתור סאונד גדול במרכז */
+/* ===================================
+   כפתור סאונד גדול במרכז (soundPromptButton)
+   =================================== */
 .soundPromptButton {
   position: absolute;
   top: 50%;
@@ -175,17 +177,23 @@
   }
 }
 
-/* כפתור סאונד קטן בפינה */
+/* ===================================
+   כפתור סאונד קטן בפינה (soundButton)
+   תיקון: הועבר לימין כדי לא להתנגש עם
+   AccessibilityWidget שנמצא בשמאל.
+   z-index הוגבה ל-20 מעל כל השכבות.
+   =================================== */
 .soundButton {
   position: absolute;
   bottom: 100px;
-  left: 40px;
-  z-index: 3;
-  width: 60px;
-  height: 60px;
+  right: 40px;          /* ✅ ימין — רחוק מה-AccessibilityWidget */
+  left: unset;          /* ✅ מבטל כל ירושת left */
+  z-index: 20;          /* ✅ מעל overlay (z:2), heroContent (z:3), soundPromptButton (z:10) */
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: linear-gradient(135deg, #C4A572 0%, #B39562 100%);
-  border: 3px solid white;
+  border: 3px solid rgba(255, 255, 255, 0.9);
   color: white;
   cursor: pointer;
   display: flex;
@@ -193,16 +201,16 @@
   justify-content: center;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+  touch-action: manipulation;   /* ✅ מבטל delay של 300ms במובייל */
 }
 
 .soundButton:hover,
 .soundButton:active {
   background: linear-gradient(135deg, #D4B582 0%, #C3A572 100%);
-  transform: scale(1.15);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(196, 165, 114, 0.6);
 }
 
 .soundButton svg {
@@ -256,7 +264,9 @@
   box-shadow: 0 8px 30px rgba(196, 165, 114, 0.5);
 }
 
-/* Responsive */
+/* ===================================
+   RESPONSIVE
+   =================================== */
 @media (max-width: 1024px) {
   .heroTitle {
     font-size: 3.5rem;
@@ -267,51 +277,48 @@
   .heroContent {
     padding: 0 30px 60px 30px;
   }
+  .soundButton {
+    bottom: 90px;
+    right: 25px;
+    width: 58px;
+    height: 58px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero {
     height: 80vh;
   }
-  
   .heroTitle {
     font-size: 2.5rem;
   }
-  
   .heroSubtitle {
     font-size: 1.8rem;
   }
-  
   .heroContent {
     padding: 0 20px 50px 20px;
   }
-
   .scrollButton {
     width: 45px;
     height: 45px;
   }
-
   .soundButton {
-    bottom: 70px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 80px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
   }
-
   .soundButton svg {
     width: 24px;
     height: 24px;
   }
-
   .soundPromptButton {
     padding: 25px 35px;
   }
-
   .soundPromptButton svg {
     width: 40px;
     height: 40px;
   }
-
   .soundPromptButton span {
     font-size: 1.1rem;
   }
@@ -321,31 +328,29 @@
   .heroTitle {
     font-size: 2rem;
   }
-  
   .heroSubtitle {
     font-size: 1.4rem;
   }
-  
   .heroContent {
     padding: 0 15px 40px 15px;
   }
-
   .soundButton {
-    bottom: 60px;
-    left: 15px;
-    width: 45px;
-    height: 45px;
+    bottom: 70px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
   }
-
+  .soundButton svg {
+    width: 22px;
+    height: 22px;
+  }
   .soundPromptButton {
     padding: 20px 30px;
   }
-
   .soundPromptButton svg {
     width: 36px;
     height: 36px;
   }
-
   .soundPromptButton span {
     font-size: 1rem;
   }
